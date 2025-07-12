@@ -2,6 +2,7 @@ package com.oyproj.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.oyproj.admin.model.UmsMenu;
+import com.oyproj.admin.model.UmsResource;
 import com.oyproj.admin.model.UmsRole;
 import com.oyproj.common.api.PageInfo;
 
@@ -21,4 +22,10 @@ public interface UmsRoleService extends IService<UmsRole> {
     PageInfo<UmsRole> listRole(String keyword, Integer pageSize, Integer pageNum);
 
     List<UmsMenu> listMenu(Long roleId);
+
+    List<UmsResource> listResource(Long roleId);
+
+    int allocMenu(Long roleId, List<Long> menuIds);
+
+    int allocResource(Long roleId, List<Long> resourceIds);
 }

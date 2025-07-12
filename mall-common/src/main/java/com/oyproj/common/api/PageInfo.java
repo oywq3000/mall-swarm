@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class PageInfo<T> {
+public class PageInfo<T> implements IPageInfo<T>{
     private long total;
     private int pages;
     private long current;

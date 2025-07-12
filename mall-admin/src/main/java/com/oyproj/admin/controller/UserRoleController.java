@@ -1,7 +1,6 @@
 package com.oyproj.admin.controller;
-
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.oyproj.admin.model.UmsMenu;
+import com.oyproj.admin.model.UmsResource;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
 import com.oyproj.admin.service.UmsRoleService;
@@ -17,8 +16,6 @@ import java.util.List;
 /**
  * @author oy
  * @description 后台用户角色管理器
- * @date 2025/07/11
- * @github https://github.com/oywq3000
  */
 @RestController
 @Tag(name = "UserRoleController", description = "后台用户角色管理")
@@ -90,4 +87,26 @@ public class UserRoleController {
         List<UmsMenu> roleList = roleService.listMenu(roleId);
         return CommonResult.success(roleList);
     }
+
+    @Operation(summary = "获取角色相关资源")
+    @GetMapping("/listResource/{roleId}")
+    public CommonResult<List<UmsResource>> listResource(@PathVariable Long roleId){
+        List<UmsResource> sourceList = roleService.listResource(roleId);
+        return CommonResult.success(sourceList);
+    }
+
+    @Operation(summary = "给角色分配菜单")
+    @PostMapping("/allocMenu")
+    public CommonResult allocMenu(@RequestParam Long roleId, @RequestParam List<Long> menuIds) {
+        int count = roleService.allocMenu(roleId, menuIds);
+        return CommonResult.success(count);
+    }
+
+    @Operation(summary = "给角色分配菜单")
+    @PostMapping("/allocResource")
+    public CommonResult allocResource(@RequestParam Long roleId,@RequestParam List<Long> resourceIds){
+        int count = roleService.allocResource(roleId,resourceIds);
+        return CommonResult.success(count);
+    }
+
 }

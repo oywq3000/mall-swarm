@@ -30,6 +30,10 @@ spring:
       enabled: true #开启文件上传
       max-file-size: 10MB #限制文件上传大小为10M
 
+mybatis-plus:
+  mapper-locations: classpath:com.oyproj.admin.dao/*.xml
+  type-aliases-package: com.oyproj.admin.model
+
 management:
   endpoints:
     web:
@@ -71,5 +75,5 @@ springdoc:
     enabled: true
   group-configs:
     - group: 'default'
-      packages-to-scan: com.macro.mall.controller
+      packages-to-scan: com.oyproj.admin.controller
   default-flat-param-object: false

@@ -2,6 +2,7 @@ package com.oyproj.common.service.impl;
 
 import com.oyproj.common.service.RedisService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +18,12 @@ import java.util.concurrent.TimeUnit;
  */
 
 @Service
-@RequiredArgsConstructor
+
 public class RedisServiceImpl implements RedisService {
 
 
-    private final RedisTemplate<String,Object> redisTemplate;
+    @Autowired
+    private  RedisTemplate<String,Object> redisTemplate;
 
     /**
      * 保存属性

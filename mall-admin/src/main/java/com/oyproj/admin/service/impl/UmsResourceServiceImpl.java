@@ -1,6 +1,10 @@
 package com.oyproj.admin.service.impl;
 
+import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.oyproj.admin.domain.PageInfo;
 import com.oyproj.admin.mapper.UmsResourceMapper;
 import com.oyproj.admin.model.UmsResource;
 import com.oyproj.admin.service.UmsResourceService;
@@ -10,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -30,6 +35,12 @@ public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper,UmsRes
      */
     @Override
     public int create(UmsResource umsResource) {
+        umsResource.setCreateTime(new Date());
+        boolean isSave = save(umsResource);
+        if(isSave){
+            initPathResourceMap();
+            return 1;
+        }
         return 0;
     }
 
@@ -41,7 +52,14 @@ public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper,UmsRes
      */
     @Override
     public int update(Long id, UmsResource umsResource) {
+        umsResource.setId(id);
+        boolean isUpdated = updateById(umsResource);
+        if(isUpdated){
+            initPathResourceMap();
+            return 1;
+        }
         return 0;
+
     }
 
     /**
@@ -51,7 +69,7 @@ public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper,UmsRes
      */
     @Override
     public UmsResource getItem(Long id) {
-        return null;
+          return getById(id);
     }
 
     /**
@@ -61,6 +79,11 @@ public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper,UmsRes
      */
     @Override
     public int delete(Long id) {
+        boolean isRemoved = removeById(id);
+        if(isRemoved){
+            initPathResourceMap();
+            return 1;
+        }
         return 0;
     }
 
@@ -74,8 +97,20 @@ public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper,UmsRes
      * @param pageNum
      */
     @Override
-    public List<UmsResource> list(Long categoryId, String nameKeyword, String urlKeyword, Integer pageSize, Integer pageNum) {
-        return null;
+    public PageInfo<UmsResource> list(Long categoryId, String nameKeyword, String urlKeyword, Integer pageSize, Integer pageNum) {
+        LambdaQueryWrapper<UmsResource> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        if(categoryId!=null){
+            lambdaQueryWrapper.eq(UmsResource::getCategoryId,categoryId);
+        }
+        if(StrUtil.isNotBlank(nameKeyword)){
+            lambdaQueryWrapper.like(UmsResource::getName,nameKeyword);
+        }
+        if(StrUtil.isNotEmpty(urlKeyword)){
+            lambdaQueryWrapper.like(UmsResource::getUrl,urlKeyword);
+        }
+        Page<UmsResource> page1 = new Page<>(pageNum,pageSize);
+        Page<UmsResource> umsResourcePage = baseMapper.selectPage(page1, lambdaQueryWrapper);
+        return PageInfo.build(umsResourcePage);
     }
 
     /**
@@ -83,7 +118,7 @@ public class UmsResourceServiceImpl extends ServiceImpl<UmsResourceMapper,UmsRes
      */
     @Override
     public List<UmsResource> listAll() {
-        return null;
+        return list();
     }
 
     /**

@@ -2,9 +2,11 @@ package com.oyproj.admin.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.oyproj.admin.domain.PageInfo;
 import com.oyproj.admin.model.UmsMenu;
 import com.oyproj.admin.model.UmsResource;
 import com.oyproj.admin.model.UmsRole;
+
 
 import java.util.List;
 import java.util.Map;
@@ -37,7 +39,7 @@ public interface UmsResourceService extends IService<UmsResource> {
     /**
      * 分页查询资源
      */
-    List<UmsResource> list(Long categoryId, String nameKeyword, String urlKeyword, Integer pageSize, Integer pageNum);
+    PageInfo<UmsResource> list(Long categoryId, String nameKeyword, String urlKeyword, Integer pageSize, Integer pageNum);
 
     /**
      * 查询全部资源
