@@ -1,0 +1,79 @@
+server:
+  port: 8080
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:mysql://192.168.200.130:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: root
+    druid:
+      initial-size: 5 #连接池初始化大小
+      min-idle: 10 #最小空闲连接数
+      max-active: 20 #最大连接数
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+      stat-view-servlet: #访问监控网页的登录用户名和密码
+        login-username: druid
+        login-password: druid
+
+  data:
+    redis:
+      host: 192.168.200.130 # Redis服务器地址
+      database: 0 # Redis数据库索引（默认为0）
+      port: 6379 # Redis服务器连接端口
+      password:  # Redis服务器连接密码（默认为空）
+      timeout: 3000ms # 连接超时时间（毫秒）
+  servlet:
+    multipart:
+      enabled: true #开启文件上传
+      max-file-size: 10MB #限制文件上传大小为10M
+
+mybatis-plus:
+  mapper-locations: classpath:com.oyproj.admin.dao/*.xml
+  type-aliases-package: com.oyproj.admin.model
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' #暴露Actuator的监控端点
+  endpoint:
+    health:
+      show-details: always #显示健康的详细信息
+    env:
+      show-values: always #默认Actuator的环境变量会以****显示，这里开启显示
+    configprops:
+      show-values: always #默认Actuator的配置属性会以****显示，这里开启显示
+    info:
+      enabled: true
+
+redis:
+  database: mall-swarm
+  key:
+    admin: 'ums:admin'
+  expire:
+    common: 86400 # 24小时
+minio:
+  endpoint: http://192.168.200.130:9000 #MinIO服务所在地址
+  bucketName: mall #存储桶名称
+  accessKey: minioadmin #访问的key
+  secretKey: minioadmin #访问的秘钥
+springdoc:
+  swagger-ui:
+    # 修改Swagger UI路径
+    path: /swagger-ui.html
+    # 开启Swagger UI界面
+    enabled: true
+    # 用于配置tag和operation的展开方式，这里配置为都不展开
+    doc-expansion: 'none'
+  api-docs:
+    # 修改api-docs路径
+    path: /v3/api-docs
+    # 开启api-docs
+    enabled: true
+  group-configs:
+    - group: 'default'
+      packages-to-scan: com.oyproj.admin.controller
+  default-flat-param-object: false
