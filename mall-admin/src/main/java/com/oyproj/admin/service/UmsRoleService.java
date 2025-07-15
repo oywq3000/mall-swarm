@@ -21,6 +21,11 @@ public interface UmsRoleService extends IService<UmsRole> {
 
     PageInfo<UmsRole> listRole(String keyword, Integer pageSize, Integer pageNum);
 
+    /**
+     * 根据管理员ID获取对应菜单
+     */
+    List<UmsMenu> getMenuList(Long adminId);
+
     List<UmsMenu> listMenu(Long roleId);
 
     List<UmsResource> listResource(Long roleId);

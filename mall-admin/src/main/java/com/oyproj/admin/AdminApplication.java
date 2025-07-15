@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
-@MapperScan({"package com.oyproj.admin.mapper","com.oyproj.admin.dao"})
+@MapperScan({"com.oyproj.admin.mapper","com.oyproj.admin.dao"})
 public class AdminApplication {
     public static void main(String[] args) {
         SpringApplication.run(AdminApplication.class,args);

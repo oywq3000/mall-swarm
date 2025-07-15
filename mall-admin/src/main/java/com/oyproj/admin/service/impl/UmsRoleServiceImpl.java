@@ -80,6 +80,16 @@ public class UmsRoleServiceImpl extends ServiceImpl<UmsRoleMapper, UmsRole> impl
                 .build();
     }
 
+    /**
+     * 根据管理员ID获取对应菜单
+     *
+     * @param adminId
+     */
+    @Override
+    public List<UmsMenu> getMenuList(Long adminId) {
+        return umsRoleDao.getMenuList(adminId);
+    }
+
     @Override
     public List<UmsMenu> listMenu(Long roleId) {
         return umsRoleDao.getMenuListByRoleId(roleId);

@@ -6,6 +6,7 @@ import com.oyproj.admin.dto.UpdateAdminPasswordParam;
 import com.oyproj.admin.model.UmsAdmin;
 import com.oyproj.admin.model.UmsResource;
 import com.oyproj.admin.model.UmsRole;
+import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -39,7 +40,7 @@ public interface UmsAdminService {
     /**
      * 根据用户名或昵称分页查询用户
      */
-    List<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum);
+    IPageInfo<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum);
 
     /**
      * 修改指定用户信息
