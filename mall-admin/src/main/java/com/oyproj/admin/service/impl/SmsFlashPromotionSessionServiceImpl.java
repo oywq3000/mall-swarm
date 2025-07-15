@@ -1,13 +1,17 @@
 package com.oyproj.admin.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.oyproj.admin.dto.SmsFlashPromotionSessionDetail;
 import com.oyproj.admin.mapper.SmsFlashPromotionSessionMapper;
 import com.oyproj.admin.model.SmsFlashPromotionSession;
 import com.oyproj.admin.service.SmsFlashPromotionProductRelationService;
 import com.oyproj.admin.service.SmsFlashPromotionSessionService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,7 +32,8 @@ public class SmsFlashPromotionSessionServiceImpl implements SmsFlashPromotionSes
      */
     @Override
     public int create(SmsFlashPromotionSession promotionSession) {
-        return 0;
+        promotionSession.setCreateTime(new Date());
+        return promotionSessionMapper.insert(promotionSession);
     }
 
     /**
@@ -39,7 +44,8 @@ public class SmsFlashPromotionSessionServiceImpl implements SmsFlashPromotionSes
      */
     @Override
     public int update(Long id, SmsFlashPromotionSession promotionSession) {
-        return 0;
+        promotionSession.setId(id);
+        return promotionSessionMapper.updateById(promotionSession);
     }
 
     /**
@@ -50,7 +56,10 @@ public class SmsFlashPromotionSessionServiceImpl implements SmsFlashPromotionSes
      */
     @Override
     public int updateStatus(Long id, Integer status) {
-        return 0;
+        SmsFlashPromotionSession promotionSession = new SmsFlashPromotionSession();
+        promotionSession.setId(id);
+        promotionSession.setStatus(status);
+        return promotionSessionMapper.updateById(promotionSession);
     }
 
     /**
@@ -60,7 +69,7 @@ public class SmsFlashPromotionSessionServiceImpl implements SmsFlashPromotionSes
      */
     @Override
     public int delete(Long id) {
-        return 0;
+       return promotionSessionMapper.deleteById(id);
     }
 
     /**
@@ -70,7 +79,7 @@ public class SmsFlashPromotionSessionServiceImpl implements SmsFlashPromotionSes
      */
     @Override
     public SmsFlashPromotionSession getItem(Long id) {
-        return null;
+        return promotionSessionMapper.selectById(id);
     }
 
     /**
@@ -78,7 +87,8 @@ public class SmsFlashPromotionSessionServiceImpl implements SmsFlashPromotionSes
      */
     @Override
     public List<SmsFlashPromotionSession> list() {
-        return null;
+        LambdaQueryWrapper<SmsFlashPromotionSession> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        return promotionSessionMapper.selectList(lambdaQueryWrapper);
     }
 
     /**
@@ -88,6 +98,18 @@ public class SmsFlashPromotionSessionServiceImpl implements SmsFlashPromotionSes
      */
     @Override
     public List<SmsFlashPromotionSessionDetail> selectList(Long flashPromotionId) {
-        return null;
+
+        List<SmsFlashPromotionSessionDetail> result = new ArrayList<>();
+        LambdaQueryWrapper<SmsFlashPromotionSession> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(SmsFlashPromotionSession::getStatus,1);
+        List<SmsFlashPromotionSession> flashPromotionSessions = promotionSessionMapper.selectList(lambdaQueryWrapper);
+        for (SmsFlashPromotionSession flashPromotionSession : flashPromotionSessions) {
+            SmsFlashPromotionSessionDetail detail = new SmsFlashPromotionSessionDetail();
+            BeanUtils.copyProperties(flashPromotionSession, detail);
+            long count = relationService.getCount(flashPromotionId, flashPromotionSession.getId());
+            detail.setProductCount(count);
+            result.add(detail);
+        }
+        return result;
     }
 }
