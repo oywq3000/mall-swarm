@@ -33,7 +33,7 @@ spring:
 mybatis-plus:
   mapper-locations:
     - classpath:com.oyproj.admin.dao/*.xml
-    - classpath:com.oyproj.admin.mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
   type-aliases-package: com.oyproj.admin.model
 
 management:
