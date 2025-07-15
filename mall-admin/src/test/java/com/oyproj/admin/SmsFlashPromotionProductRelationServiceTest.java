@@ -14,7 +14,7 @@ public class SmsFlashPromotionProductRelationServiceTest {
     @Test
     void TestList(){
         IPageInfo<SmsFlashPromotionProduct> list = service.list(2L,1L,1,5);
-        System.out.println(list);
+        System.out.println(list.getRecords());
 
     }
 }
