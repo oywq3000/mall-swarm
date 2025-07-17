@@ -18,6 +18,11 @@
       "sourceMethod": "getPolicy()"
     },
     {
+      "name": "minio",
+      "type": "com.oyproj.admin.properties.MinioProperties",
+      "sourceType": "com.oyproj.admin.properties.MinioProperties"
+    },
+    {
       "name": "redis",
       "type": "com.oyproj.admin.properties.RedisProperties",
       "sourceType": "com.oyproj.admin.properties.RedisProperties"
@@ -88,6 +93,30 @@
       "type": "java.lang.Integer",
       "description": "签名有效期，单位秒",
       "sourceType": "com.oyproj.admin.properties.AliyunOssProperties$Policy"
+    },
+    {
+      "name": "minio.access-key",
+      "type": "java.lang.String",
+      "description": "访问的 key",
+      "sourceType": "com.oyproj.admin.properties.MinioProperties"
+    },
+    {
+      "name": "minio.bucket-name",
+      "type": "java.lang.String",
+      "description": "存储桶名称",
+      "sourceType": "com.oyproj.admin.properties.MinioProperties"
+    },
+    {
+      "name": "minio.endpoint",
+      "type": "java.lang.String",
+      "description": "MinIO 服务所在地址",
+      "sourceType": "com.oyproj.admin.properties.MinioProperties"
+    },
+    {
+      "name": "minio.secret-key",
+      "type": "java.lang.String",
+      "description": "访问的秘钥",
+      "sourceType": "com.oyproj.admin.properties.MinioProperties"
     },
     {
       "name": "redis.database",
