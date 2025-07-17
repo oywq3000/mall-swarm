@@ -13,6 +13,8 @@
         <module>mall-admin</module>
         <module>mall-common</module>
         <module>mall-model</module>
+        <module>mall-auth</module>
+        <module>mall-gateway</module>
     </modules>
 
     <parent>
