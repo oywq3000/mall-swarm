@@ -1,6 +1,23 @@
 {
   "groups": [
     {
+      "name": "aliyun.oss",
+      "type": "com.oyproj.admin.properties.AliyunOssProperties",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties"
+    },
+    {
+      "name": "aliyun.oss.dir",
+      "type": "com.oyproj.admin.properties.AliyunOssProperties$Dir",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties",
+      "sourceMethod": "getDir()"
+    },
+    {
+      "name": "aliyun.oss.policy",
+      "type": "com.oyproj.admin.properties.AliyunOssProperties$Policy",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties",
+      "sourceMethod": "getPolicy()"
+    },
+    {
       "name": "redis",
       "type": "com.oyproj.admin.properties.RedisProperties",
       "sourceType": "com.oyproj.admin.properties.RedisProperties"
@@ -24,6 +41,54 @@
     }
   ],
   "properties": [
+    {
+      "name": "aliyun.oss.access-key-id",
+      "type": "java.lang.String",
+      "description": "访问身份验证中用到用户标识",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties"
+    },
+    {
+      "name": "aliyun.oss.access-key-secret",
+      "type": "java.lang.String",
+      "description": "用户用于加密签名字符串和 OSS 用来验证签名字符串的密钥",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties"
+    },
+    {
+      "name": "aliyun.oss.bucket-name",
+      "type": "java.lang.String",
+      "description": "OSS 的存储空间",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties"
+    },
+    {
+      "name": "aliyun.oss.callback",
+      "type": "java.lang.String",
+      "description": "文件上传成功后的回调地址",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties"
+    },
+    {
+      "name": "aliyun.oss.dir.prefix",
+      "type": "java.lang.String",
+      "description": "上传文件夹路径前缀",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties$Dir"
+    },
+    {
+      "name": "aliyun.oss.endpoint",
+      "type": "java.lang.String",
+      "description": "OSS 对外服务的访问域名",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties"
+    },
+    {
+      "name": "aliyun.oss.max-size",
+      "type": "java.lang.Integer",
+      "description": "上传文件最大大小，单位 M",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties"
+    },
+    {
+      "name": "aliyun.oss.policy.expire",
+      "type": "java.lang.Integer",
+      "description": "签名有效期，单位秒",
+      "sourceType": "com.oyproj.admin.properties.AliyunOssProperties$Policy"
+    },
     {
       "name": "redis.database",
       "type": "java.lang.String",
