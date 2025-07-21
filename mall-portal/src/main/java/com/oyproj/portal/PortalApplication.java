@@ -1,15 +1,16 @@
-package com.oyproj.auth;
+package com.oyproj.portal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
+
 @EnableFeignClients
-@SpringBootApplication(scanBasePackages = "com.oyproj")
 @EnableDiscoveryClient
-public class MallAuthApplication {
+@SpringBootApplication
+public class PortalApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MallAuthApplication.class,args);
+        SpringApplication.run(PortalApplication.class,args);
     }
 }

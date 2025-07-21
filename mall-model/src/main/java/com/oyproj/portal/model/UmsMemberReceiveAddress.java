@@ -1,4 +1,4 @@
-package com.oyproj.portal.mapper;
+package com.oyproj.portal.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -14,7 +14,7 @@ public class UmsMemberReceiveAddress implements Serializable {
 
     private String phoneNumber;
 
-    @Schema(title = "是否为默认")
+    @Schema(title = "是否为默认,1表示默认")
     private Integer defaultStatus;
 
     @Schema(title = "邮政编码")

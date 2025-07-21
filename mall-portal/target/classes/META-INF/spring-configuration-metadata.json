@@ -1,0 +1,131 @@
+{
+  "groups": [
+    {
+      "name": "redis",
+      "type": "com.oyproj.portal.properties.RedisProperties",
+      "sourceType": "com.oyproj.portal.properties.RedisProperties"
+    },
+    {
+      "name": "redis.expire",
+      "type": "com.oyproj.portal.properties.RedisProperties$Expire",
+      "sourceType": "com.oyproj.portal.properties.RedisProperties",
+      "sourceMethod": "getExpire()"
+    },
+    {
+      "name": "redis.keys",
+      "type": "com.oyproj.portal.properties.RedisProperties$Keys",
+      "sourceType": "com.oyproj.portal.properties.RedisProperties",
+      "sourceMethod": "getKeys()"
+    },
+    {
+      "name": "sa-token",
+      "type": "com.oyproj.portal.properties.SaTokenProperties",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "redis.database",
+      "type": "java.lang.String",
+      "sourceType": "com.oyproj.portal.properties.RedisProperties"
+    },
+    {
+      "name": "redis.expire.auth-code",
+      "type": "java.lang.Integer",
+      "sourceType": "com.oyproj.portal.properties.RedisProperties$Expire"
+    },
+    {
+      "name": "redis.expire.common",
+      "type": "java.lang.Integer",
+      "sourceType": "com.oyproj.portal.properties.RedisProperties$Expire"
+    },
+    {
+      "name": "redis.keys.auth-code",
+      "type": "java.lang.String",
+      "sourceType": "com.oyproj.portal.properties.RedisProperties$Keys"
+    },
+    {
+      "name": "redis.keys.member",
+      "type": "java.lang.String",
+      "sourceType": "com.oyproj.portal.properties.RedisProperties$Keys"
+    },
+    {
+      "name": "redis.keys.order-id",
+      "type": "java.lang.String",
+      "sourceType": "com.oyproj.portal.properties.RedisProperties$Keys"
+    },
+    {
+      "name": "sa-token.active-timeout",
+      "type": "java.lang.Long",
+      "description": "token 临时有效期 (指定时间内无操作就视为 token 过期)，单位秒",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.concurrent",
+      "type": "java.lang.Boolean",
+      "description": "是否允许同一账号并发登录 (为 false 时新登录挤掉旧登录)",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.jwt-secret-key",
+      "type": "java.lang.String",
+      "description": "jwt 秘钥",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.log",
+      "type": "java.lang.Boolean",
+      "description": "是否输出操作日志",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.print",
+      "type": "java.lang.Boolean",
+      "description": "是否打印 banner",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.read-cookie",
+      "type": "java.lang.Boolean",
+      "description": "是否从 cookie 中读取 token",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.read-header",
+      "type": "java.lang.Boolean",
+      "description": "是否从 head 中读取 token",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.share",
+      "type": "java.lang.Boolean",
+      "description": "在多人登录同一账号时，是否共用一个 token (为 false 时每次登录新建一个 token)",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.timeout",
+      "type": "java.lang.Long",
+      "description": "token 有效期，单位秒，-1 代表永不过期",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.token-name",
+      "type": "java.lang.String",
+      "description": "token 名称 (同时也是 cookie 名称)",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.token-prefix",
+      "type": "java.lang.String",
+      "description": "token 前缀",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    },
+    {
+      "name": "sa-token.token-style",
+      "type": "java.lang.String",
+      "description": "token 风格",
+      "sourceType": "com.oyproj.portal.properties.SaTokenProperties"
+    }
+  ],
+  "hints": []
+}

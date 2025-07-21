@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Tag(name = "UmsMemberReceiveAddressController",description = "会员收货地址管理")
 @RequiredArgsConstructor
-@RequestMapping("/member/adress")
+@RequestMapping("/member/address")
 public class UmsMemberReceiveAddressController {
 
 }

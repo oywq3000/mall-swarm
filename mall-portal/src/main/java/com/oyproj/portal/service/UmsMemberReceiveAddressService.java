@@ -1,6 +1,6 @@
 package com.oyproj.portal.service;
 
-import com.oyproj.portal.mapper.UmsMemberReceiveAddress;
+import com.oyproj.portal.model.UmsMemberReceiveAddress;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

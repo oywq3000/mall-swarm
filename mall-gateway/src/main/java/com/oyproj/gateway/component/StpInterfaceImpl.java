@@ -4,6 +4,7 @@ import cn.dev33.satoken.stp.StpInterface;
 import cn.dev33.satoken.stp.StpUtil;
 import com.oyproj.common.constant.AuthConstant;
 import com.oyproj.common.dto.UserDto;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @author oy
  * @description 自定义权限验证接口扩展
  */
+@Component
 public class StpInterfaceImpl implements StpInterface {
     @Override
     public List<String> getPermissionList(Object loginId, String loginType) {

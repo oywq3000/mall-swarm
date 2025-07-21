@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8085
 spring:
   mvc:
     pathmatch:
@@ -17,25 +17,27 @@ spring:
       stat-view-servlet: #访问监控网页的登录用户名和密码
         login-username: druid
         login-password: druid
-
   data:
+    mongodb:
+      host: 192.168.200.130
+      port: 27017
+      database: mall-port
     redis:
       host: 192.168.200.130 # Redis服务器地址
       database: 0 # Redis数据库索引（默认为0）
       port: 6379 # Redis服务器连接端口
       password:  # Redis服务器连接密码（默认为空）
       timeout: 3000ms # 连接超时时间（毫秒）
-  servlet:
-    multipart:
-      enabled: true #开启文件上传
-      max-file-size: 10MB #限制文件上传大小为10M
-
-mybatis-plus:
+  rabbitmq:
+    host: 192.168.200.130
+    port: 5672
+    virtual-host: /mall
+    username: mall
+    password: mall
+mybatis:
   mapper-locations:
-    - classpath:com/oyproj/admin/dao/*.xml
-    - classpath:com/oyproj/admin/mapper/*.xml
-  type-aliases-package: com.oyproj.admin.model
-
+    - classpath:com/oyproj/portal/dao/*.xml
+    - classpath:com/oyproj/portal/mapper/*.xml
 management:
   endpoints:
     web:
@@ -50,33 +52,19 @@ management:
       show-values: always #默认Actuator的配置属性会以****显示，这里开启显示
     info:
       enabled: true
-
 redis:
   database: mall-swarm
   key:
-    admin: 'ums:admin'
+    authCode: 'ums:authCode'
+    orderId: 'oms:orderId'
+    member: 'ums:member'
   expire:
+    authCode: 90 # 验证码超期时间
     common: 86400 # 24小时
-minio:
-  endpoint: http://192.168.200.130:9090 #MinIO服务所在地址
-  bucketName: mall #存储桶名称
-  accessKey: minioadmin #访问的key
-  secretKey: minioadmin #访问的秘钥
-
-
-aliyun:
-  oss:
-    endpoint: oss-cn-shenzhen.aliyuncs.com # oss对外服务的访问域名
-    accessKeyId: test # 访问身份验证中用到用户标识
-    accessKeySecret: test # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
-    bucketName: macro-oss # oss的存储空间
-    policy:
-      expire: 300 # 签名有效期(S)
-    maxSize: 10 # 上传文件大小(M)
-    callback: http://39.98.190.128:8080/aliyun/oss/callback # 文件上传成功后的回调地址
-    dir:
-      prefix: mall/images/ # 上传文件夹路径前缀
-
+rabbitmq:
+  queue:
+    name:
+      cancelOrder: cancelOrderQueue
 springdoc:
   swagger-ui:
     # 修改Swagger UI路径
@@ -92,9 +80,7 @@ springdoc:
     enabled: true
   group-configs:
     - group: 'default'
-      packages-to-scan: com.oyproj.admin.controller
-  default-flat-param-object: false
-
+      packages-to-scan: com.oyproj.portal.controller
 sa-token:
   # token名称 (同时也是cookie名称)
   token-name: Authorization
