@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "secure.ignore",
+      "type": "com.oyproj.gateway.config.IgnoreUrlsConfig",
+      "sourceType": "com.oyproj.gateway.config.IgnoreUrlsConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "secure.ignore.urls",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.oyproj.gateway.config.IgnoreUrlsConfig"
+    }
+  ],
+  "hints": []
+}

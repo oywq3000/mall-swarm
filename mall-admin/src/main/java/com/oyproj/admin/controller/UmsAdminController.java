@@ -35,8 +35,6 @@ import java.util.stream.Collectors;
 @RequestMapping("/admin")
 @RequiredArgsConstructor
 public class UmsAdminController {
-
-
     private final UmsAdminService adminService;
 
     private final UmsRoleService roleService;

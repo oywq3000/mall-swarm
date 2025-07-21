@@ -33,6 +33,6 @@ springdoc:
     # 开启api-docs
     enabled: true
   group-configs:
-    - group: 'default'
+    - group: 'auth'
       packages-to-scan: com.oyproj.auth.controller
   default-flat-param-object: false
