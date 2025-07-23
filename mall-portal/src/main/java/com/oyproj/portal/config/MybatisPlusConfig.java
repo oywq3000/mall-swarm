@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@MapperScan({"com.oyproj.portal.mapper","com.oyproj.portal.dao"})
+@MapperScan({"com.oyproj.portal.mapper","com.oyproj.portal.dao","com.oyproj.admin.mapper"})
 public class MybatisPlusConfig {
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor(){
