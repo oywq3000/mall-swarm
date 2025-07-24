@@ -3,10 +3,8 @@ package com.oyproj.admin.dao;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.oyproj.admin.dto.OmsOrderReturnApplyResult;
 import com.oyproj.admin.dto.OmsReturnApplyQueryParam;
-import com.oyproj.admin.model.OmsOrderReturnApply;
+import com.oyproj.mall.model.OmsOrderReturnApply;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
  * @author oy

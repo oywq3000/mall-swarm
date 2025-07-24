@@ -1,7 +1,7 @@
 package com.oyproj.admin.controller;
 
 import com.oyproj.admin.dto.PmsProductAttributeCategoryItem;
-import com.oyproj.admin.model.PmsProductAttributeCategory;
+import com.oyproj.mall.model.PmsProductAttributeCategory;
 import com.oyproj.admin.service.PmsProductAttributeCategoryService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;

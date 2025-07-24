@@ -1,6 +1,6 @@
 package com.oyproj.admin.controller;
 
-import com.oyproj.admin.model.CmsSubject;
+import com.oyproj.mall.model.CmsSubject;
 import com.oyproj.admin.service.CmsSubjectService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
@@ -8,7 +8,6 @@ import com.oyproj.common.api.IPageInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

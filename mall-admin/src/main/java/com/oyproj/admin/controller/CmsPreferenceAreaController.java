@@ -1,6 +1,6 @@
 package com.oyproj.admin.controller;
 
-import com.oyproj.admin.model.CmsPrefrenceArea;
+import com.oyproj.mall.model.CmsPrefrenceArea;
 import com.oyproj.admin.service.CmsPreferenceAreaService;
 import com.oyproj.common.api.CommonResult;
 import io.swagger.v3.oas.annotations.Operation;
@@ -8,7 +8,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;

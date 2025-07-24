@@ -1,7 +1,7 @@
 package com.oyproj.portal.service.impl;
 
 import com.oyproj.common.service.RedisService;
-import com.oyproj.portal.model.UmsMember;
+import com.oyproj.mall.model.UmsMember;
 import com.oyproj.portal.properties.RedisProperties;
 import com.oyproj.portal.service.UmsMemberCacheService;
 import lombok.RequiredArgsConstructor;

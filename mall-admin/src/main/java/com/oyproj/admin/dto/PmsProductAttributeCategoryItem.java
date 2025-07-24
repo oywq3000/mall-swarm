@@ -1,7 +1,7 @@
 package com.oyproj.admin.dto;
 
-import com.oyproj.admin.model.PmsProductAttribute;
-import com.oyproj.admin.model.PmsProductAttributeCategory;
+import com.oyproj.mall.model.PmsProductAttribute;
+import com.oyproj.mall.model.PmsProductAttributeCategory;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

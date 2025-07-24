@@ -2,8 +2,8 @@ package com.oyproj.admin.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.oyproj.admin.mapper.UmsResourceCategoryMapper;
-import com.oyproj.admin.model.UmsResourceCategory;
+import com.oyproj.mall.mapper.UmsResourceCategoryMapper;
+import com.oyproj.mall.model.UmsResourceCategory;
 import com.oyproj.admin.service.UmsResourceCategoryService;
 import org.springframework.stereotype.Service;
 

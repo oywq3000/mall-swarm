@@ -1,8 +1,8 @@
 package com.oyproj.admin.dao;
 
-import com.oyproj.admin.model.UmsAdminRoleRelation;
-import com.oyproj.admin.model.UmsResource;
-import com.oyproj.admin.model.UmsRole;
+import com.oyproj.mall.model.UmsAdminRoleRelation;
+import com.oyproj.mall.model.UmsResource;
+import com.oyproj.mall.model.UmsRole;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

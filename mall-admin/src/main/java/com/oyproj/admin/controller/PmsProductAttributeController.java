@@ -2,7 +2,7 @@ package com.oyproj.admin.controller;
 
 import com.oyproj.admin.dto.PmsProductAttributeParam;
 import com.oyproj.admin.dto.ProductAttrInfo;
-import com.oyproj.admin.model.PmsProductAttribute;
+import com.oyproj.mall.model.PmsProductAttribute;
 import com.oyproj.admin.service.PmsProductAttributeService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
@@ -14,8 +14,6 @@ import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

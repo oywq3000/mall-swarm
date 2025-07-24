@@ -1,5 +1,5 @@
 package com.oyproj.admin.controller;
-import com.oyproj.admin.model.SmsHomeRecommendProduct;
+import com.oyproj.mall.model.SmsHomeRecommendProduct;
 import com.oyproj.admin.service.SmsHomeRecommendProductService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
@@ -7,7 +7,6 @@ import com.oyproj.common.api.IPageInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

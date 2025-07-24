@@ -3,7 +3,7 @@ package com.oyproj.admin.service;
 import com.oyproj.admin.dto.PmsProductParam;
 import com.oyproj.admin.dto.PmsProductQueryParam;
 import com.oyproj.admin.dto.PmsProductResult;
-import com.oyproj.admin.model.PmsProduct;
+import com.oyproj.mall.model.PmsProduct;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;

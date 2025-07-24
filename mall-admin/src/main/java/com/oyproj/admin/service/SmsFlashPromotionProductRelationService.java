@@ -1,7 +1,7 @@
 package com.oyproj.admin.service;
 
 import com.oyproj.admin.dto.SmsFlashPromotionProduct;
-import com.oyproj.admin.model.SmsFlashPromotionProductRelation;
+import com.oyproj.mall.model.SmsFlashPromotionProductRelation;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 

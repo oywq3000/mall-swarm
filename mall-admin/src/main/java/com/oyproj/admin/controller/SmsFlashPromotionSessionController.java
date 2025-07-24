@@ -1,7 +1,7 @@
 package com.oyproj.admin.controller;
 
 import com.oyproj.admin.dto.SmsFlashPromotionSessionDetail;
-import com.oyproj.admin.model.SmsFlashPromotionSession;
+import com.oyproj.mall.model.SmsFlashPromotionSession;
 import com.oyproj.admin.service.SmsFlashPromotionSessionService;
 import com.oyproj.common.api.CommonResult;
 import io.swagger.v3.oas.annotations.Operation;

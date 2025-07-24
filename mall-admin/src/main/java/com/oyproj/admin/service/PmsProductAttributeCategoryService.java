@@ -1,7 +1,7 @@
 package com.oyproj.admin.service;
 
 import com.oyproj.admin.dto.PmsProductAttributeCategoryItem;
-import com.oyproj.admin.model.PmsProductAttributeCategory;
+import com.oyproj.mall.model.PmsProductAttributeCategory;
 import com.oyproj.common.api.IPageInfo;
 
 import java.util.List;

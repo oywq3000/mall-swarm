@@ -1,6 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.OmsOrderReturnReason;
+import com.oyproj.mall.model.OmsOrderReturnReason;
 import com.oyproj.common.api.IPageInfo;
 
 import java.util.List;

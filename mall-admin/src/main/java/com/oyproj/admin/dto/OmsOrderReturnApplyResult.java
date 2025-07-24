@@ -1,7 +1,7 @@
 package com.oyproj.admin.dto;
 
-import com.oyproj.admin.model.OmsCompanyAddress;
-import com.oyproj.admin.model.OmsOrderReturnApply;
+import com.oyproj.mall.model.OmsCompanyAddress;
+import com.oyproj.mall.model.OmsOrderReturnApply;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

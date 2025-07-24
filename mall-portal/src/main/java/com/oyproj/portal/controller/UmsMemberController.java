@@ -2,7 +2,7 @@ package com.oyproj.portal.controller;
 
 import cn.dev33.satoken.stp.SaTokenInfo;
 import com.oyproj.common.api.CommonResult;
-import com.oyproj.portal.model.UmsMember;
+import com.oyproj.mall.model.UmsMember;
 import com.oyproj.portal.properties.SaTokenProperties;
 import com.oyproj.portal.service.UmsMemberService;
 import io.swagger.v3.oas.annotations.Operation;

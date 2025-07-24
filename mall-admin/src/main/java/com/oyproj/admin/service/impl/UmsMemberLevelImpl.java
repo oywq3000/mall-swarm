@@ -1,9 +1,9 @@
 package com.oyproj.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.oyproj.admin.mapper.UmsMemberLevelMapper;
-import com.oyproj.admin.model.UmsMemberLevel;
 import com.oyproj.admin.service.UmsMemberLevelService;
+import com.oyproj.mall.mapper.UmsMemberLevelMapper;
+import com.oyproj.mall.model.UmsMemberLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

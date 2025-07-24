@@ -1,12 +1,11 @@
 package com.oyproj.portal.controller;
 
 import com.oyproj.common.api.CommonResult;
-import com.oyproj.portal.model.UmsMemberReceiveAddress;
+import com.oyproj.mall.model.UmsMemberReceiveAddress;
 import com.oyproj.portal.service.UmsMemberReceiveAddressService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

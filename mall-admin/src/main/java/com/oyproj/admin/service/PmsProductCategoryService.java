@@ -2,7 +2,7 @@ package com.oyproj.admin.service;
 
 import com.oyproj.admin.dto.PmsProductCategoryParam;
 import com.oyproj.admin.dto.PmsProductCategoryWithChildrenItem;
-import com.oyproj.admin.model.PmsProductCategory;
+import com.oyproj.mall.model.PmsProductCategory;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 

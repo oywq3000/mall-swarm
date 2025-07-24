@@ -1,7 +1,7 @@
 package com.oyproj.admin.controller;
 
 import com.oyproj.admin.dto.SmsFlashPromotionProduct;
-import com.oyproj.admin.model.SmsFlashPromotionProductRelation;
+import com.oyproj.mall.model.SmsFlashPromotionProductRelation;
 import com.oyproj.admin.service.SmsFlashPromotionProductRelationService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;

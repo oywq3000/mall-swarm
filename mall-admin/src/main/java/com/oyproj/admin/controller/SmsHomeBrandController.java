@@ -1,6 +1,6 @@
 package com.oyproj.admin.controller;
 
-import com.oyproj.admin.model.SmsHomeBrand;
+import com.oyproj.mall.model.SmsHomeBrand;
 import com.oyproj.admin.service.SmsHomeBrandService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;

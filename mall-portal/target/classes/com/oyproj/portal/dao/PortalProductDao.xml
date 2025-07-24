@@ -3,18 +3,18 @@
 <mapper namespace="com.oyproj.portal.dao.PortalProductDao">
     <resultMap id="cartProductMap" type="com.oyproj.portal.dto.CartProduct" autoMapping="true">
         <id column="id" jdbcType="BIGINT" property="id" />
-        <collection property="productAttributeList" columnPrefix="attr_" resultMap="com.oyproj.admin.mapper.PmsProductAttributeMapper.BaseResultMap">
+        <collection property="productAttributeList" columnPrefix="attr_" resultMap="com.oyproj.mall.mapper.PmsProductAttributeMapper.BaseResultMap">
         </collection>
-        <collection property="skuStockList" columnPrefix="sku_" resultMap="com.oyproj.admin.mapper.PmsSkuStockMapper.BaseResultMap">
+        <collection property="skuStockList" columnPrefix="sku_" resultMap="com.oyproj.mall.mapper.PmsSkuStockMapper.BaseResultMap">
         </collection>
     </resultMap>
-    <resultMap id="promotionProductMap" type="com.oyproj.portal.dto.PromotionProduct" extends="com.oyproj.admin.mapper.PmsProductMapper.BaseResultMap">
+    <resultMap id="promotionProductMap" type="com.oyproj.portal.dto.PromotionProduct" extends="com.oyproj.mall.mapper.PmsProductMapper.BaseResultMap">
         <id column="id" jdbcType="BIGINT" property="id" />
-        <collection property="skuStockList" columnPrefix="sku_" resultMap="com.oyproj.admin.mapper.PmsSkuStockMapper.BaseResultMap">
+        <collection property="skuStockList" columnPrefix="sku_" resultMap="com.oyproj.mall.mapper.PmsSkuStockMapper.BaseResultMap">
         </collection>
-        <collection property="productLadderList" columnPrefix="ladder_" resultMap="com.oyproj.admin.mapper.PmsProductLadderMapper.BaseResultMap">
+        <collection property="productLadderList" columnPrefix="ladder_" resultMap="com.oyproj.mall.mapper.PmsProductLadderMapper.BaseResultMap">
         </collection>
-        <collection property="productFullReductionList" columnPrefix="full_" resultMap="com.oyproj.admin.mapper.PmsProductFullReductionMapper.BaseResultMap">
+        <collection property="productFullReductionList" columnPrefix="full_" resultMap="com.oyproj.mall.mapper.PmsProductFullReductionMapper.BaseResultMap">
         </collection>
     </resultMap>
     <select id="getCartProduct" resultMap="cartProductMap">
@@ -72,7 +72,7 @@
             #{id}
         </foreach>
     </select>
-    <select id="getAvailableCouponList" resultMap="com.oyproj.admin.mapper.SmsCouponMapper.BaseResultMap">
+    <select id="getAvailableCouponList" resultMap="com.oyproj.mall.mapper.SmsCouponMapper.BaseResultMap">
         SELECT *
         FROM sms_coupon
         WHERE use_type = 0

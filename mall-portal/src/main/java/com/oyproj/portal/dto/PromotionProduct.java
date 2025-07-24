@@ -1,9 +1,9 @@
 package com.oyproj.portal.dto;
 
-import com.oyproj.admin.model.PmsProduct;
-import com.oyproj.admin.model.PmsProductFullReduction;
-import com.oyproj.admin.model.PmsProductLadder;
-import com.oyproj.admin.model.PmsSkuStock;
+import com.oyproj.mall.model.PmsProduct;
+import com.oyproj.mall.model.PmsProductFullReduction;
+import com.oyproj.mall.model.PmsProductLadder;
+import com.oyproj.mall.model.PmsSkuStock;
 
 import java.util.List;
 

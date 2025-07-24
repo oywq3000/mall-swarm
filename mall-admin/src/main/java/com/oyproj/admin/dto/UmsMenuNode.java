@@ -1,6 +1,6 @@
 package com.oyproj.admin.dto;
 
-import com.oyproj.admin.model.UmsMenu;
+import com.oyproj.mall.model.UmsMenu;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

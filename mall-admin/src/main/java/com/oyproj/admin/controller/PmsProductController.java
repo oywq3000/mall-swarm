@@ -3,7 +3,7 @@ package com.oyproj.admin.controller;
 import com.oyproj.admin.dto.PmsProductParam;
 import com.oyproj.admin.dto.PmsProductQueryParam;
 import com.oyproj.admin.dto.PmsProductResult;
-import com.oyproj.admin.model.PmsProduct;
+import com.oyproj.mall.model.PmsProduct;
 import com.oyproj.admin.service.PmsProductService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
@@ -11,7 +11,6 @@ import com.oyproj.common.api.IPageInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

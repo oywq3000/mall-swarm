@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oyproj.portal.dao.SmsCouponHistoryDao">
     <resultMap id="couponHistoryDetailMap" type="com.oyproj.portal.dto.SmsCouponHistoryDetail"
-               extends="com.oyproj.portal.mapper.SmsCouponHistoryMapper.BaseResultMap">
-        <association property="coupon" resultMap="com.oyproj.admin.mapper.SmsCouponMapper.BaseResultMap" columnPrefix="c_">
+               extends="com.oyproj.mall.mapper.SmsCouponHistoryMapper.BaseResultMap">
+        <association property="coupon" resultMap="com.oyproj.mall.mapper.SmsCouponMapper.BaseResultMap" columnPrefix="c_">
         </association>
-        <collection property="productRelationList" columnPrefix="cpr_" resultMap="com.oyproj.admin.mapper.SmsCouponProductRelationMapper.BaseResultMap">
+        <collection property="productRelationList" columnPrefix="cpr_" resultMap="com.oyproj.mall.mapper.SmsCouponProductRelationMapper.BaseResultMap">
         </collection>
-        <collection property="categoryRelationList" columnPrefix="cpcr_" resultMap="com.oyproj.admin.mapper.SmsCouponProductCategoryRelationMapper.BaseResultMap">
+        <collection property="categoryRelationList" columnPrefix="cpcr_" resultMap="com.oyproj.mall.mapper.SmsCouponProductCategoryRelationMapper.BaseResultMap">
         </collection>
     </resultMap>
     <select id="getDetailList" resultMap="couponHistoryDetailMap">
@@ -34,7 +34,7 @@
           AND ch.use_status = 0
     </select>
 
-    <select id="getCouponList" resultMap="com.oyproj.admin.mapper.SmsCouponMapper.BaseResultMap">
+    <select id="getCouponList" resultMap="com.oyproj.mall.mapper.SmsCouponMapper.BaseResultMap">
         SELECT
         c.*
         FROM

@@ -2,7 +2,7 @@ package com.oyproj.portal.service;
 
 
 import cn.dev33.satoken.stp.SaTokenInfo;
-import com.oyproj.portal.model.UmsMember;
+import com.oyproj.mall.model.UmsMember;
 import org.springframework.transaction.annotation.Transactional;
 
 /**

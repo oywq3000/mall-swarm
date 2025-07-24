@@ -2,7 +2,7 @@ package com.oyproj.admin.service;
 
 import com.oyproj.admin.domain.PageInfo;
 import com.oyproj.admin.dto.UmsMenuNode;
-import com.oyproj.admin.model.UmsMenu;
+import com.oyproj.mall.model.UmsMenu;
 
 import java.util.List;
 

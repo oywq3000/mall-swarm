@@ -6,15 +6,13 @@ import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.oyproj.portal.dao.PortalProductDao;
 import com.oyproj.portal.dto.CartProduct;
 import com.oyproj.portal.dto.CartPromotionItem;
-import com.oyproj.portal.mapper.OmsCartItemMapper;
-import com.oyproj.portal.model.OmsCartItem;
-import com.oyproj.portal.model.UmsMember;
+import com.oyproj.mall.mapper.OmsCartItemMapper;
+import com.oyproj.mall.model.OmsCartItem;
+import com.oyproj.mall.model.UmsMember;
 import com.oyproj.portal.service.OmsCartItemService;
 import com.oyproj.portal.service.OmsPromotionService;
 import com.oyproj.portal.service.UmsMemberService;
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -2,7 +2,7 @@ package com.oyproj.admin.service;
 
 import com.oyproj.admin.dto.PmsProductAttributeParam;
 import com.oyproj.admin.dto.ProductAttrInfo;
-import com.oyproj.admin.model.PmsProductAttribute;
+import com.oyproj.mall.model.PmsProductAttribute;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -5,15 +5,14 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.oyproj.admin.dao.OmsOrderDao;
 import com.oyproj.admin.domain.PageInfo;
 import com.oyproj.admin.dto.*;
-import com.oyproj.admin.mapper.OmsOrderMapper;
-import com.oyproj.admin.mapper.OmsOrderOperateHistoryMapper;
-import com.oyproj.admin.model.OmsOrder;
-import com.oyproj.admin.model.OmsOrderOperateHistory;
+import com.oyproj.mall.mapper.OmsOrderMapper;
+import com.oyproj.mall.mapper.OmsOrderOperateHistoryMapper;
+import com.oyproj.mall.model.OmsOrder;
+import com.oyproj.mall.model.OmsOrderOperateHistory;
 import com.oyproj.admin.service.OmsOrderService;
 import com.oyproj.common.api.IPageInfo;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;

@@ -1,7 +1,7 @@
 package com.oyproj.admin.service;
 
 
-import com.oyproj.admin.model.CmsPrefrenceArea;
+import com.oyproj.mall.model.CmsPrefrenceArea;
 
 import java.util.List;
 

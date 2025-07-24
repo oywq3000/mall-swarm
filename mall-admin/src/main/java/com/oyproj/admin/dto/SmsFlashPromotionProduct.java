@@ -1,7 +1,7 @@
 package com.oyproj.admin.dto;
 
-import com.oyproj.admin.model.PmsProduct;
-import com.oyproj.admin.model.SmsFlashPromotionProductRelation;
+import com.oyproj.mall.model.PmsProduct;
+import com.oyproj.mall.model.SmsFlashPromotionProductRelation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

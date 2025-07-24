@@ -1,6 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.UmsMemberLevel;
+import com.oyproj.mall.model.UmsMemberLevel;
 
 import java.util.List;
 

@@ -2,8 +2,8 @@ package com.oyproj.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.oyproj.admin.dao.PmsSkuStockDao;
-import com.oyproj.admin.mapper.PmsSkuStockMapper;
-import com.oyproj.admin.model.PmsSkuStock;
+import com.oyproj.mall.mapper.PmsSkuStockMapper;
+import com.oyproj.mall.model.PmsSkuStock;
 import com.oyproj.admin.service.PmsSkuStockService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

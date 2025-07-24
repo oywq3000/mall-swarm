@@ -2,7 +2,7 @@ package com.oyproj.admin.controller;
 
 import com.oyproj.admin.dto.PmsProductCategoryParam;
 import com.oyproj.admin.dto.PmsProductCategoryWithChildrenItem;
-import com.oyproj.admin.model.PmsProductCategory;
+import com.oyproj.mall.model.PmsProductCategory;
 import com.oyproj.admin.service.PmsProductCategoryService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
@@ -10,7 +10,6 @@ import com.oyproj.common.api.IPageInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 

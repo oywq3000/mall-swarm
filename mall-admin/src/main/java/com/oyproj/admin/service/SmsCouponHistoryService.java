@@ -1,9 +1,7 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.SmsCouponHistory;
+import com.oyproj.mall.model.SmsCouponHistory;
 import com.oyproj.common.api.IPageInfo;
-
-import java.util.List;
 
 /**
  * @author oy

@@ -1,7 +1,7 @@
 package com.oyproj.admin.service.impl;
 
-import com.oyproj.admin.mapper.OmsOrderSettingMapper;
-import com.oyproj.admin.model.OmsOrderSetting;
+import com.oyproj.mall.mapper.OmsOrderSettingMapper;
+import com.oyproj.mall.model.OmsOrderSetting;
 import com.oyproj.admin.service.OmsOrderSettingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

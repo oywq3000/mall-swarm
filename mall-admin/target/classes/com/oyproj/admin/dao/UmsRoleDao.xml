@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oyproj.admin.dao.UmsRoleDao">
 
-    <select id="getMenuList" resultType="com.oyproj.admin.model.UmsMenu">
+    <select id="getMenuList" resultType="com.oyproj.mall.model.UmsMenu">
         SELECT
             m.id id,
             m.parent_id parentId,
@@ -24,7 +24,7 @@
         GROUP BY
             m.id
     </select>
-    <select id="getMenuListByRoleId" resultType="com.oyproj.admin.model.UmsMenu">
+    <select id="getMenuListByRoleId" resultType="com.oyproj.mall.model.UmsMenu">
         SELECT
             m.id id,
             m.parent_id parentId,
@@ -44,7 +44,7 @@
         GROUP BY
             m.id
     </select>
-    <select id="getResourceListByRoleId" resultType="com.oyproj.admin.model.UmsResource">
+    <select id="getResourceListByRoleId" resultType="com.oyproj.mall.model.UmsResource">
         SELECT
             r.id id,
             r.create_time createTime,

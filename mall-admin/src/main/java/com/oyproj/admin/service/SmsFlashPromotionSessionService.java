@@ -1,7 +1,7 @@
 package com.oyproj.admin.service;
 
 import com.oyproj.admin.dto.SmsFlashPromotionSessionDetail;
-import com.oyproj.admin.model.SmsFlashPromotionSession;
+import com.oyproj.mall.model.SmsFlashPromotionSession;
 
 import java.util.List;
 

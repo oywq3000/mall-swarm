@@ -3,9 +3,7 @@ package com.oyproj.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.oyproj.admin.domain.PageInfo;
-import com.oyproj.admin.model.UmsMenu;
-import com.oyproj.admin.model.UmsResource;
-import com.oyproj.admin.model.UmsRole;
+import com.oyproj.mall.model.UmsResource;
 
 
 import java.util.List;

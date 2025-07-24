@@ -1,6 +1,6 @@
 package com.oyproj.portal.dao;
 
-import com.oyproj.admin.model.SmsCoupon;
+import com.oyproj.mall.model.SmsCoupon;
 import com.oyproj.portal.dto.CartProduct;
 import com.oyproj.portal.dto.PromotionProduct;
 import org.apache.ibatis.annotations.Param;

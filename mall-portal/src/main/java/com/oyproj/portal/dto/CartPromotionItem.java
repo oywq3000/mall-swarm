@@ -1,6 +1,6 @@
 package com.oyproj.portal.dto;
 
-import com.oyproj.portal.model.OmsCartItem;
+import com.oyproj.mall.model.OmsCartItem;
 
 import java.math.BigDecimal;
 

@@ -1,9 +1,9 @@
 package com.oyproj.portal.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.oyproj.portal.mapper.UmsMemberReceiveAddressMapper;
-import com.oyproj.portal.model.UmsMember;
-import com.oyproj.portal.model.UmsMemberReceiveAddress;
+import com.oyproj.mall.mapper.UmsMemberReceiveAddressMapper;
+import com.oyproj.mall.model.UmsMember;
+import com.oyproj.mall.model.UmsMemberReceiveAddress;
 import com.oyproj.portal.service.UmsMemberReceiveAddressService;
 import com.oyproj.portal.service.UmsMemberService;
 import lombok.RequiredArgsConstructor;

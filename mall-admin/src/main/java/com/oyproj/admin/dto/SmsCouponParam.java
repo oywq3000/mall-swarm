@@ -1,8 +1,8 @@
 package com.oyproj.admin.dto;
 
-import com.oyproj.admin.model.SmsCoupon;
-import com.oyproj.admin.model.SmsCouponProductCategoryRelation;
-import com.oyproj.admin.model.SmsCouponProductRelation;
+import com.oyproj.mall.model.SmsCoupon;
+import com.oyproj.mall.model.SmsCouponProductCategoryRelation;
+import com.oyproj.mall.model.SmsCouponProductRelation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;

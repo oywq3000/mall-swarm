@@ -1,7 +1,7 @@
 package com.oyproj.portal.service;
 
 import com.oyproj.portal.dto.CartPromotionItem;
-import com.oyproj.portal.model.OmsCartItem;
+import com.oyproj.mall.model.OmsCartItem;
 
 import java.util.List;
 

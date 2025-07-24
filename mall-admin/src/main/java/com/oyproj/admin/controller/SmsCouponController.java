@@ -1,7 +1,7 @@
 package com.oyproj.admin.controller;
 
 import com.oyproj.admin.dto.SmsCouponParam;
-import com.oyproj.admin.model.SmsCoupon;
+import com.oyproj.mall.model.SmsCoupon;
 import com.oyproj.admin.service.SmsCouponService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;

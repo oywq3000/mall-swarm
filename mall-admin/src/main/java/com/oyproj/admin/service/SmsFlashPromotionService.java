@@ -1,9 +1,7 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.SmsFlashPromotion;
+import com.oyproj.mall.model.SmsFlashPromotion;
 import com.oyproj.common.api.IPageInfo;
-
-import java.util.List;
 
 /**
  * @author oy

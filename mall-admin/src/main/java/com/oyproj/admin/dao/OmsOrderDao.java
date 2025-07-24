@@ -4,8 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.oyproj.admin.dto.OmsOrderDeliveryParam;
 import com.oyproj.admin.dto.OmsOrderDetail;
 import com.oyproj.admin.dto.OmsOrderQueryParam;
-import com.oyproj.admin.model.OmsOrder;
-import com.oyproj.common.api.IPageInfo;
+import com.oyproj.mall.model.OmsOrder;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

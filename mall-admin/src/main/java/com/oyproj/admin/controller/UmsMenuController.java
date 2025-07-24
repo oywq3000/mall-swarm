@@ -2,14 +2,13 @@ package com.oyproj.admin.controller;
 
 import com.oyproj.admin.domain.PageInfo;
 import com.oyproj.admin.dto.UmsMenuNode;
-import com.oyproj.admin.model.UmsMenu;
+import com.oyproj.mall.model.UmsMenu;
 import com.oyproj.admin.service.UmsMenuService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

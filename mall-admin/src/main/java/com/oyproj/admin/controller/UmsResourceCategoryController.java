@@ -1,5 +1,5 @@
 package com.oyproj.admin.controller;
-import com.oyproj.admin.model.UmsResourceCategory;
+import com.oyproj.mall.model.UmsResourceCategory;
 import com.oyproj.admin.service.UmsResourceCategoryService;
 import com.oyproj.common.api.CommonResult;
 import io.swagger.v3.oas.annotations.Operation;

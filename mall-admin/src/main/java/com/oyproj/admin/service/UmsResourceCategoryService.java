@@ -1,7 +1,7 @@
 package com.oyproj.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.oyproj.admin.model.UmsResourceCategory;
+import com.oyproj.mall.model.UmsResourceCategory;
 
 import java.util.List;
 

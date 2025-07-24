@@ -1,11 +1,9 @@
 package com.oyproj.admin.service;
 
 import com.oyproj.admin.dto.SmsCouponParam;
-import com.oyproj.admin.model.SmsCoupon;
+import com.oyproj.mall.model.SmsCoupon;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 /**
  * @author oy

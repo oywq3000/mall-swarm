@@ -1,7 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.oyproj.admin.model.SmsHomeNewProduct;
+import com.oyproj.mall.model.SmsHomeNewProduct;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 

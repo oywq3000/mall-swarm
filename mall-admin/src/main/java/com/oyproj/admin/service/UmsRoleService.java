@@ -1,9 +1,9 @@
 package com.oyproj.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.oyproj.admin.model.UmsMenu;
-import com.oyproj.admin.model.UmsResource;
-import com.oyproj.admin.model.UmsRole;
+import com.oyproj.mall.model.UmsMenu;
+import com.oyproj.mall.model.UmsResource;
+import com.oyproj.mall.model.UmsRole;
 import com.oyproj.common.api.PageInfo;
 
 import java.util.List;

@@ -2,7 +2,7 @@ package com.oyproj.admin.service;
 
 
 
-import com.oyproj.admin.model.OmsCompanyAddress;
+import com.oyproj.mall.model.OmsCompanyAddress;
 
 import java.util.List;
 

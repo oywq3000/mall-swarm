@@ -1,6 +1,6 @@
 package com.oyproj.admin.service.impl;
 
-import com.oyproj.admin.model.UmsAdmin;
+import com.oyproj.mall.model.UmsAdmin;
 import com.oyproj.admin.properties.RedisProperties;
 import com.oyproj.admin.service.UmsAdminCacheService;
 import com.oyproj.common.service.RedisService;

@@ -5,12 +5,11 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.oyproj.admin.dao.PmsProductAttributeCategoryDao;
 import com.oyproj.admin.domain.PageInfo;
 import com.oyproj.admin.dto.PmsProductAttributeCategoryItem;
-import com.oyproj.admin.mapper.PmsProductAttributeCategoryMapper;
-import com.oyproj.admin.model.PmsProductAttributeCategory;
+import com.oyproj.mall.mapper.PmsProductAttributeCategoryMapper;
+import com.oyproj.mall.model.PmsProductAttributeCategory;
 import com.oyproj.admin.service.PmsProductAttributeCategoryService;
 import com.oyproj.common.api.IPageInfo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

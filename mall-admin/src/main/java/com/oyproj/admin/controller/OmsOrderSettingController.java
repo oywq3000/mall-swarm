@@ -1,6 +1,6 @@
 package com.oyproj.admin.controller;
 
-import com.oyproj.admin.model.OmsOrderSetting;
+import com.oyproj.mall.model.OmsOrderSetting;
 import com.oyproj.admin.service.OmsOrderSettingService;
 import com.oyproj.common.api.CommonResult;
 import io.swagger.v3.oas.annotations.Operation;

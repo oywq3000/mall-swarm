@@ -3,7 +3,7 @@ package com.oyproj.admin.service;
 import com.oyproj.admin.dto.OmsOrderReturnApplyResult;
 import com.oyproj.admin.dto.OmsReturnApplyQueryParam;
 import com.oyproj.admin.dto.OmsUpdateStatusParam;
-import com.oyproj.admin.model.OmsOrderReturnApply;
+import com.oyproj.mall.model.OmsOrderReturnApply;
 import com.oyproj.common.api.IPageInfo;
 
 import java.util.List;

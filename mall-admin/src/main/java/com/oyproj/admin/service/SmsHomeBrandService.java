@@ -1,6 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.SmsHomeBrand;
+import com.oyproj.mall.model.SmsHomeBrand;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 

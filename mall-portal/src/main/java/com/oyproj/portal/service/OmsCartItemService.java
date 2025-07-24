@@ -2,7 +2,7 @@ package com.oyproj.portal.service;
 
 import com.oyproj.portal.dto.CartProduct;
 import com.oyproj.portal.dto.CartPromotionItem;
-import com.oyproj.portal.model.OmsCartItem;
+import com.oyproj.mall.model.OmsCartItem;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.oyproj.admin.controller;
 
-import com.oyproj.admin.model.PmsSkuStock;
+import com.oyproj.mall.model.PmsSkuStock;
 import com.oyproj.admin.service.PmsSkuStockService;
 import com.oyproj.common.api.CommonResult;
 import io.swagger.v3.oas.annotations.Operation;

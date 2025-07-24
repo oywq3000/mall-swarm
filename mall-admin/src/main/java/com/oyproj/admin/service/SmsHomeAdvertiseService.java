@@ -1,7 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.oyproj.admin.model.SmsHomeAdvertise;
+import com.oyproj.mall.model.SmsHomeAdvertise;
 import com.oyproj.common.api.IPageInfo;
 
 import java.util.List;

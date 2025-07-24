@@ -2,7 +2,7 @@ package com.oyproj.admin.controller;
 
 
 import com.oyproj.admin.domain.PageInfo;
-import com.oyproj.admin.model.UmsResource;
+import com.oyproj.mall.model.UmsResource;
 import com.oyproj.admin.service.UmsResourceService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;

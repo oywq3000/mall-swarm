@@ -3,12 +3,11 @@ package com.oyproj.admin.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.oyproj.admin.domain.PageInfo;
-import com.oyproj.admin.mapper.SmsHomeBrandMapper;
-import com.oyproj.admin.model.SmsHomeBrand;
+import com.oyproj.mall.mapper.SmsHomeBrandMapper;
+import com.oyproj.mall.model.SmsHomeBrand;
 import com.oyproj.admin.service.SmsHomeBrandService;
 import com.oyproj.common.api.IPageInfo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 

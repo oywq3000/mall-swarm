@@ -1,6 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.CmsSubject;
+import com.oyproj.mall.model.CmsSubject;
 import com.oyproj.common.api.IPageInfo;
 
 import java.util.List;

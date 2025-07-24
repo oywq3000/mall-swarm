@@ -1,8 +1,7 @@
 package com.oyproj.admin.dao;
 
-import com.oyproj.admin.model.UmsMenu;
-import com.oyproj.admin.model.UmsResource;
-import org.apache.ibatis.annotations.Mapper;
+import com.oyproj.mall.model.UmsMenu;
+import com.oyproj.mall.model.UmsResource;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.oyproj.admin.service;
 
 import com.oyproj.admin.dto.*;
-import com.oyproj.admin.model.OmsOrder;
+import com.oyproj.mall.model.OmsOrder;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oyproj.admin.dao.PmsProductAttributeCategoryDao">
-    <resultMap id="getListWithAttrMap" type="com.oyproj.admin.dto.PmsProductAttributeCategoryItem" extends="com.oyproj.admin.mapper.PmsProductAttributeCategoryMapper.BaseResultMap">
-        <collection property="productAttributeList" columnPrefix="attr_" resultMap="com.oyproj.admin.mapper.PmsProductAttributeMapper.BaseResultMap">
+    <resultMap id="getListWithAttrMap" type="com.oyproj.admin.dto.PmsProductAttributeCategoryItem" extends="com.oyproj.mall.mapper.PmsProductAttributeCategoryMapper.BaseResultMap">
+        <collection property="productAttributeList" columnPrefix="attr_" resultMap="com.oyproj.mall.mapper.PmsProductAttributeMapper.BaseResultMap">
         </collection>
     </resultMap>
     <select id="getListWithAttr" resultMap="getListWithAttrMap">

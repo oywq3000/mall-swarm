@@ -5,19 +5,17 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.oyproj.admin.dao.SmsCouponDao;
 import com.oyproj.admin.domain.PageInfo;
 import com.oyproj.admin.dto.SmsCouponParam;
-import com.oyproj.admin.mapper.SmsCouponMapper;
-import com.oyproj.admin.mapper.SmsCouponProductCategoryRelationMapper;
-import com.oyproj.admin.mapper.SmsCouponProductRelationMapper;
-import com.oyproj.admin.model.SmsCoupon;
-import com.oyproj.admin.model.SmsCouponProductCategoryRelation;
-import com.oyproj.admin.model.SmsCouponProductRelation;
+import com.oyproj.mall.mapper.SmsCouponMapper;
+import com.oyproj.mall.mapper.SmsCouponProductCategoryRelationMapper;
+import com.oyproj.mall.mapper.SmsCouponProductRelationMapper;
+import com.oyproj.mall.model.SmsCoupon;
+import com.oyproj.mall.model.SmsCouponProductCategoryRelation;
+import com.oyproj.mall.model.SmsCouponProductRelation;
 import com.oyproj.admin.service.SmsCouponService;
 import com.oyproj.common.api.IPageInfo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

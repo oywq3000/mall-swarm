@@ -1,7 +1,7 @@
 package com.oyproj.portal.service;
 
-import com.oyproj.admin.model.SmsCoupon;
-import com.oyproj.admin.model.SmsCouponHistory;
+import com.oyproj.mall.model.SmsCoupon;
+import com.oyproj.mall.model.SmsCouponHistory;
 import com.oyproj.portal.dto.CartPromotionItem;
 import com.oyproj.portal.dto.SmsCouponHistoryDetail;
 import org.springframework.transaction.annotation.Transactional;

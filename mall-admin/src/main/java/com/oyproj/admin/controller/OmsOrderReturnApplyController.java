@@ -2,7 +2,7 @@ package com.oyproj.admin.controller;
 import com.oyproj.admin.dto.OmsOrderReturnApplyResult;
 import com.oyproj.admin.dto.OmsReturnApplyQueryParam;
 import com.oyproj.admin.dto.OmsUpdateStatusParam;
-import com.oyproj.admin.model.OmsOrderReturnApply;
+import com.oyproj.mall.model.OmsOrderReturnApply;
 import com.oyproj.admin.service.OmsOrderReturnApplyService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;

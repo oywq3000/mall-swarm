@@ -1,6 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.PmsSkuStock;
+import com.oyproj.mall.model.PmsSkuStock;
 
 import java.util.List;
 

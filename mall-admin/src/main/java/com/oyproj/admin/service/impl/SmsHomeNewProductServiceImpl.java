@@ -1,11 +1,10 @@
 package com.oyproj.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.oyproj.admin.domain.PageInfo;
-import com.oyproj.admin.mapper.SmsHomeNewProductMapper;
-import com.oyproj.admin.model.SmsHomeNewProduct;
+import com.oyproj.mall.mapper.SmsHomeNewProductMapper;
+import com.oyproj.mall.model.SmsHomeNewProduct;
 import com.oyproj.admin.service.SmsHomeNewProductService;
 import com.oyproj.common.api.IPageInfo;
 import lombok.RequiredArgsConstructor;

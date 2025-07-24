@@ -1,13 +1,12 @@
 package com.oyproj.admin.controller;
 
 
-import com.oyproj.admin.model.OmsCompanyAddress;
+import com.oyproj.mall.model.OmsCompanyAddress;
 import com.oyproj.admin.service.OmsCompanyAddressService;
 import com.oyproj.common.api.CommonResult;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

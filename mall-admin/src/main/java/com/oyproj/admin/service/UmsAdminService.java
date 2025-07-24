@@ -3,9 +3,9 @@ package com.oyproj.admin.service;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import com.oyproj.admin.dto.UmsAdminParam;
 import com.oyproj.admin.dto.UpdateAdminPasswordParam;
-import com.oyproj.admin.model.UmsAdmin;
-import com.oyproj.admin.model.UmsResource;
-import com.oyproj.admin.model.UmsRole;
+import com.oyproj.mall.model.UmsAdmin;
+import com.oyproj.mall.model.UmsResource;
+import com.oyproj.mall.model.UmsRole;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 

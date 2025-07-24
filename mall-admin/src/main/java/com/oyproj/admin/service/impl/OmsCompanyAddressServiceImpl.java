@@ -1,8 +1,8 @@
 package com.oyproj.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.oyproj.admin.mapper.OmsCompanyAddressMapper;
-import com.oyproj.admin.model.OmsCompanyAddress;
+import com.oyproj.mall.mapper.OmsCompanyAddressMapper;
+import com.oyproj.mall.model.OmsCompanyAddress;
 import com.oyproj.admin.service.OmsCompanyAddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

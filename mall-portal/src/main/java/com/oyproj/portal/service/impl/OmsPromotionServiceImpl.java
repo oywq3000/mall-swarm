@@ -1,12 +1,12 @@
 package com.oyproj.portal.service.impl;
 
-import com.oyproj.admin.model.PmsProductFullReduction;
-import com.oyproj.admin.model.PmsProductLadder;
-import com.oyproj.admin.model.PmsSkuStock;
+import com.oyproj.mall.model.PmsProductFullReduction;
+import com.oyproj.mall.model.PmsProductLadder;
+import com.oyproj.mall.model.PmsSkuStock;
 import com.oyproj.portal.dao.PortalProductDao;
 import com.oyproj.portal.dto.CartPromotionItem;
 import com.oyproj.portal.dto.PromotionProduct;
-import com.oyproj.portal.model.OmsCartItem;
+import com.oyproj.mall.model.OmsCartItem;
 import com.oyproj.portal.service.OmsPromotionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -143,6 +143,9 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
         List<Long> productIdList = new ArrayList<>();
         for (OmsCartItem cartItem : cartItemList) {
             productIdList.add(cartItem.getProductId());
+        }
+        if(productIdList.size()==0){
+            return null;
         }
         return portalProductDao.getPromotionProductList(productIdList);
     }

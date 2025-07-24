@@ -1,6 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.SmsHomeRecommendProduct;
+import com.oyproj.mall.model.SmsHomeRecommendProduct;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 

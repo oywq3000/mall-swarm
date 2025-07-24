@@ -1,6 +1,6 @@
 package com.oyproj.portal.service;
 
-import com.oyproj.portal.model.UmsMember;
+import com.oyproj.mall.model.UmsMember;
 
 /**
  * @author oy

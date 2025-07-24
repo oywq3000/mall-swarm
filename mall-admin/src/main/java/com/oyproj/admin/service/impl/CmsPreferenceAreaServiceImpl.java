@@ -2,9 +2,9 @@ package com.oyproj.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 
-import com.oyproj.admin.mapper.CmsPrefrenceAreaMapper;
+import com.oyproj.mall.mapper.CmsPrefrenceAreaMapper;
 
-import com.oyproj.admin.model.CmsPrefrenceArea;
+import com.oyproj.mall.model.CmsPrefrenceArea;
 import com.oyproj.admin.service.CmsPreferenceAreaService;
 import lombok.RequiredArgsConstructor;
 

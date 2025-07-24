@@ -1,17 +1,14 @@
 package com.oyproj.admin.controller;
 
 import com.oyproj.admin.dto.*;
-import com.oyproj.admin.model.OmsOrder;
+import com.oyproj.mall.model.OmsOrder;
 import com.oyproj.admin.service.OmsOrderService;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
 import com.oyproj.common.api.IPageInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

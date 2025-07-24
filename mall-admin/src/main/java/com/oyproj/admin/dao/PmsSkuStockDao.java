@@ -1,6 +1,6 @@
 package com.oyproj.admin.dao;
 
-import com.oyproj.admin.model.PmsSkuStock;
+import com.oyproj.mall.model.PmsSkuStock;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

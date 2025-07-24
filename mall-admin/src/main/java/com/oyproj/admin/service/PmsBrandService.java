@@ -1,7 +1,7 @@
 package com.oyproj.admin.service;
 
 import com.oyproj.admin.dto.PmsBrandParam;
-import com.oyproj.admin.model.PmsBrand;
+import com.oyproj.mall.model.PmsBrand;
 import com.oyproj.common.api.IPageInfo;
 import org.springframework.transaction.annotation.Transactional;
 

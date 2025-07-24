@@ -1,6 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.UmsAdmin;
+import com.oyproj.mall.model.UmsAdmin;
 
 /**
  * @author oy

@@ -1,6 +1,6 @@
 package com.oyproj.admin.service;
 
-import com.oyproj.admin.model.OmsOrderSetting;
+import com.oyproj.mall.model.OmsOrderSetting;
 
 /**
  * @author oy

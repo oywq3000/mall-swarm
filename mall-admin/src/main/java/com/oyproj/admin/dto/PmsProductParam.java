@@ -1,6 +1,6 @@
 package com.oyproj.admin.dto;
 
-import com.oyproj.admin.model.*;
+import com.oyproj.mall.model.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

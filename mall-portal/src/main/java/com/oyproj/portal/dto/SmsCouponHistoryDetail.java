@@ -1,9 +1,9 @@
 package com.oyproj.portal.dto;
 
-import com.oyproj.admin.model.SmsCoupon;
-import com.oyproj.admin.model.SmsCouponHistory;
-import com.oyproj.admin.model.SmsCouponProductCategoryRelation;
-import com.oyproj.admin.model.SmsCouponProductRelation;
+import com.oyproj.mall.model.SmsCoupon;
+import com.oyproj.mall.model.SmsCouponHistory;
+import com.oyproj.mall.model.SmsCouponProductCategoryRelation;
+import com.oyproj.mall.model.SmsCouponProductRelation;
 
 import java.util.List;
 

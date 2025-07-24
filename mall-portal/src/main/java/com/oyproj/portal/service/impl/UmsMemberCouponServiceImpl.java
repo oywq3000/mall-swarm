@@ -1,18 +1,16 @@
 package com.oyproj.portal.service.impl;
-
 import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.oyproj.admin.mapper.*;
-import com.oyproj.admin.model.*;
 import com.oyproj.common.exception.Asserts;
+
+import com.oyproj.mall.mapper.*;
+import com.oyproj.mall.model.*;
 import com.oyproj.portal.dao.SmsCouponHistoryDao;
 import com.oyproj.portal.dto.CartPromotionItem;
 import com.oyproj.portal.dto.SmsCouponHistoryDetail;
-import com.oyproj.portal.model.UmsMember;
 import com.oyproj.portal.service.UmsMemberCouponService;
 import com.oyproj.portal.service.UmsMemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -20,7 +18,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

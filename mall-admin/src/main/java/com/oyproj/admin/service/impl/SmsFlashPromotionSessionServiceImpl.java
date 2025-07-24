@@ -2,8 +2,8 @@ package com.oyproj.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.oyproj.admin.dto.SmsFlashPromotionSessionDetail;
-import com.oyproj.admin.mapper.SmsFlashPromotionSessionMapper;
-import com.oyproj.admin.model.SmsFlashPromotionSession;
+import com.oyproj.mall.mapper.SmsFlashPromotionSessionMapper;
+import com.oyproj.mall.model.SmsFlashPromotionSession;
 import com.oyproj.admin.service.SmsFlashPromotionProductRelationService;
 import com.oyproj.admin.service.SmsFlashPromotionSessionService;
 import lombok.RequiredArgsConstructor;

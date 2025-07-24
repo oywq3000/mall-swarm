@@ -37,7 +37,7 @@ spring:
 mybatis:
   mapper-locations:
     - classpath:com/oyproj/portal/dao/*.xml
-    - classpath:com/oyproj/portal/mapper/*.xml
+    - classpath:com/oyproj/mall/mapper/*.xml
 management:
   endpoints:
     web:
