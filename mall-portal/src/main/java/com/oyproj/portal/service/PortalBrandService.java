@@ -1,6 +1,7 @@
 package com.oyproj.portal.service;
 
 import com.oyproj.common.api.CommonPage;
+import com.oyproj.common.api.IPageInfo;
 import com.oyproj.mall.model.PmsBrand;
 import com.oyproj.mall.model.PmsProduct;
 
@@ -14,7 +15,7 @@ public interface PortalBrandService {
     /**
      * 分页获取推荐品牌
      */
-    List<PmsBrand> recommendList(Integer pageNum, Integer pageSize);
+    IPageInfo<PmsBrand> recommendList(Integer pageNum, Integer pageSize);
 
     /**
      * 获取品牌详情

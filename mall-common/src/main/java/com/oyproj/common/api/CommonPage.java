@@ -7,6 +7,7 @@ import java.util.List;
  * @description 分页数据封装类
  */
 import lombok.Data;
+import org.springframework.data.domain.Page;
 
 @Data
 public class CommonPage<T> {
@@ -26,6 +27,16 @@ public class CommonPage<T> {
         result.setPageSize((int)page.getSize()); //page.getSize()指代
         result.setTotal(page.getTotal());
         result.setList(page.getRecords());
+        return result;
+    }
+
+    public static <T> CommonPage<T> restPage(Page<T> pageInfo) {
+        CommonPage<T> result = new CommonPage<T>();
+        result.setTotalPage(pageInfo.getTotalPages());
+        result.setPageNum(pageInfo.getNumber());
+        result.setPageSize(pageInfo.getSize());
+        result.setTotal(pageInfo.getTotalElements());
+        result.setList(pageInfo.getContent());
         return result;
     }
 
