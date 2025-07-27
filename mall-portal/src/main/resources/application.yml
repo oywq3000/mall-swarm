@@ -106,3 +106,6 @@ sa-token:
   jwt-secret-key: sa-secret-key123
   # 是否打印banner
   is-print: false
+
+alipay:
+  appId: test
