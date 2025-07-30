@@ -40,7 +40,7 @@
       "sourceMethod": "getKey()"
     },
     {
-      "name": "springdoc.sa-token",
+      "name": "sa-token",
       "type": "com.oyproj.admin.properties.SaTokenProperties",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     }
@@ -134,73 +134,73 @@
       "sourceType": "com.oyproj.admin.properties.RedisProperties$Key"
     },
     {
-      "name": "springdoc.sa-token.active-timeout",
+      "name": "sa-token.active-timeout",
       "type": "java.lang.Long",
       "description": "token临时有效期 (指定时间内无操作就视为token过期)，单位秒",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.concurrent",
+      "name": "sa-token.concurrent",
       "type": "java.lang.Boolean",
       "description": "是否允许同一账号并发登录 (为false时新登录挤掉旧登录)",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.jwt-secret-key",
+      "name": "sa-token.jwt-secret-key",
       "type": "java.lang.String",
       "description": "jwt秘钥",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.log",
+      "name": "sa-token.log",
       "type": "java.lang.Boolean",
       "description": "是否输出操作日志",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.print",
+      "name": "sa-token.print",
       "type": "java.lang.Boolean",
       "description": "是否打印banner",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.read-cookie",
+      "name": "sa-token.read-cookie",
       "type": "java.lang.Boolean",
       "description": "是否从cookie中读取token",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.read-header",
+      "name": "sa-token.read-header",
       "type": "java.lang.Boolean",
       "description": "是否从head中读取token",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.share",
+      "name": "sa-token.share",
       "type": "java.lang.Boolean",
       "description": "在多人登录同一账号时，是否共用一个token (为false时每次登录新建一个token)",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.timeout",
+      "name": "sa-token.timeout",
       "type": "java.lang.Long",
       "description": "token有效期，单位秒，-1代表永不过期",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.token-name",
+      "name": "sa-token.token-name",
       "type": "java.lang.String",
       "description": "token名称 (同时也是cookie名称)",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.token-prefix",
+      "name": "sa-token.token-prefix",
       "type": "java.lang.String",
       "description": "token前缀",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"
     },
     {
-      "name": "springdoc.sa-token.token-style",
+      "name": "sa-token.token-style",
       "type": "java.lang.String",
       "description": "token风格",
       "sourceType": "com.oyproj.admin.properties.SaTokenProperties"

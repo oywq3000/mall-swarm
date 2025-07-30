@@ -50,7 +50,7 @@ public class SaTokenConfig {
                 //鉴权方法：每次访问进入
                 .setAuth(obj->{
                     //对于OPTIONS预检请求直接放行
-                    SaRouter.match(SaHttpMethod.OPTIONS);
+                    SaRouter.match(SaHttpMethod.OPTIONS).stop();
                     //登入认证：管理后台用户认证
                     SaRouter.match("/mall-portal/**",r-> StpMemberUtil.checkLogin()).stop();
                     // 登录认证：管理后台用户认证

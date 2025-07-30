@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * 用于绑定 sa-token 配置的属性类
  */
 @Component
-@ConfigurationProperties(prefix = "springdoc.sa-token")
+@ConfigurationProperties(prefix = "sa-token")
 public class SaTokenProperties {
     /**
      * token名称 (同时也是cookie名称)
