@@ -132,7 +132,7 @@ public class PmsProductServiceImpl implements PmsProductService {
         //更新商品信息
         PmsProduct product = productParam;
         product.setId(id);
-        productMapper.insert(product);
+        productMapper.updateById(product);
         //会员价格
         LambdaQueryWrapper<PmsMemberPrice> memberPriceLambdaQueryWrapper = new LambdaQueryWrapper<>();
         memberPriceLambdaQueryWrapper.eq(PmsMemberPrice::getProductId, id);
@@ -231,7 +231,9 @@ public class PmsProductServiceImpl implements PmsProductService {
             lambdaQueryWrapper.eq(PmsProduct::getVerifyStatus, productQueryParam.getVerifyStatus());
         }
         if (!StringUtils.isEmpty(productQueryParam.getKeyword())) {
-            lambdaQueryWrapper.like(PmsProduct::getKeywords, productQueryParam.getKeyword());
+            lambdaQueryWrapper.like(PmsProduct::getKeywords, productQueryParam.getKeyword())
+                    .or().like(PmsProduct::getName,productQueryParam.getKeyword())
+                    .or().like(PmsProduct::getProductSn,productQueryParam.getKeyword());
         }
         if (!StringUtils.isEmpty(productQueryParam.getProductSn())) {
             lambdaQueryWrapper.eq(PmsProduct::getProductSn, productQueryParam.getProductSn());

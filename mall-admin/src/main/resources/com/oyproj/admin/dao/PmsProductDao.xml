@@ -15,7 +15,6 @@
         </collection>
         <collection property="subjectProductRelationList" column="{productId=id}" select="selectSubjectProductRelationByProductId"/>
         <collection property="prefrenceAreaProductRelationList" column="{productId=id}" select="selectPrefrenceAreaProductRelationByProductId"/>
-
     </resultMap>
 
     <select id="getUpdateInfo" resultMap="updateInfoMap">
@@ -28,7 +27,7 @@
             a.id attribute_id,a.product_id attribute_product_id,a.product_attribute_id attribute_product_attribute_id,a.value attribute_value
         FROM pms_product p
         LEFT JOIN pms_product_category pc on pc.id = p.product_category_id
-        LEFT JOIN pms_product_ladder l ON p.id = l.product_id
+        LEFT JOIN pms_product_ladder l ON l.product_id = p.id
         LEFT JOIN pms_product_full_reduction pf ON pf.product_id=p.id
         LEFT JOIN pms_member_price m ON m.product_id = p.id
         LEFT JOIN pms_sku_stock s ON s.product_id = p.id

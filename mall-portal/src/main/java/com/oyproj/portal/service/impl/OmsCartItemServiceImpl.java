@@ -77,6 +77,7 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
     public List<CartPromotionItem> listPromotion(Long memberId, List<Long> cartIds) {
 
         List<OmsCartItem> cartItemList = list(memberId);
+        //如果指定了购物车id，则只返回指定购物车中的商品
         if(CollUtil.isNotEmpty(cartIds)){
             cartItemList = cartItemList.stream().filter(item->cartIds.contains(item.getId())).toList();
         }
