@@ -227,7 +227,6 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         if(CollUtil.isNotEmpty(orderSettings)){
             order.setAutoConfirmDay(orderSettings.get(0).getConfirmOvertime());
         }
-        // TODO: 2018/9/3 bill_*,delivery_*
         //插入order表和order_item表
         orderMapper.insert(order);
         for (OmsOrderItem orderItem : orderItemList) {
@@ -404,7 +403,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         //设置数据信息
         List<Long> orderIds = omsOrderPage.getRecords().stream().map(OmsOrder::getId).collect(Collectors.toList());
         LambdaQueryWrapper<OmsOrderItem> lambdaQueryWrapper1 = new LambdaQueryWrapper<>();
-        lambdaQueryWrapper1.eq(OmsOrderItem::getOrderId,orderIds);
+        lambdaQueryWrapper1.in(OmsOrderItem::getOrderId,orderIds);
         List<OmsOrderItem> orderItemList = orderItemMapper.selectList(lambdaQueryWrapper1);
         List<OmsOrderDetail> orderDetailList = new ArrayList<>();
         for (OmsOrder omsOrder : omsOrderPage.getRecords()) {

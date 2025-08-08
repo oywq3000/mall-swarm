@@ -69,7 +69,6 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
 
     /**
      * 获取包含促销活动信息的购物车列表
-     *
      * @param memberId
      * @param cartIds
      */
@@ -82,7 +81,7 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
             cartItemList = cartItemList.stream().filter(item->cartIds.contains(item.getId())).toList();
         }
         List<CartPromotionItem> cartPromotionItemList = new ArrayList<>();
-        if(!CollectionUtils.isNotEmpty(cartItemList)){
+        if(CollectionUtils.isNotEmpty(cartItemList)){
             cartPromotionItemList = promotionService.calcCartPromotion(cartItemList);
         }
         return cartPromotionItemList;

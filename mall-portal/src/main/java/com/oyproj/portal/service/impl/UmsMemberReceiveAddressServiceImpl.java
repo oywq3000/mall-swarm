@@ -92,6 +92,7 @@ public class UmsMemberReceiveAddressServiceImpl implements UmsMemberReceiveAddre
         UmsMember currentMember = memberService.getCurrentMember();
         LambdaQueryWrapper<UmsMemberReceiveAddress> lambdaQueryWrapper = new LambdaQueryWrapper<>();
         lambdaQueryWrapper.eq(UmsMemberReceiveAddress::getMemberId,currentMember.getId());
+        lambdaQueryWrapper.eq(UmsMemberReceiveAddress::getId,id);
         return addressMapper.selectOne(lambdaQueryWrapper);
     }
 }
