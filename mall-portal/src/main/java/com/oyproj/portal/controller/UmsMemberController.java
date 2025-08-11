@@ -3,6 +3,7 @@ package com.oyproj.portal.controller;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import com.oyproj.common.api.CommonResult;
 import com.oyproj.mall.model.UmsMember;
+import com.oyproj.portal.dto.UmsUpdateMemberInfoDto;
 import com.oyproj.portal.properties.SaTokenProperties;
 import com.oyproj.portal.service.UmsMemberService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -78,5 +79,14 @@ public class UmsMemberController {
                                        @RequestParam String authCode) {
         memberService.updatePassword(telephone,password,authCode);
         return CommonResult.success(null,"密码修改成功");
+    }
+    @Operation(summary = "修改用户信息")
+    @PostMapping(value = "/updateInfo")
+    public CommonResult updateInfo(@RequestBody UmsUpdateMemberInfoDto updateMemberInfoDto){
+        int count = memberService.updateInfo(updateMemberInfoDto);
+        if(count>0){
+            return CommonResult.success(null,"修改消息成功");
+        }
+        return CommonResult.failed();
     }
 }

@@ -1,12 +1,10 @@
-package com.oyproj.admin.service.impl;
-
+package com.oyproj.portal.service.impl;
+import com.oyproj.portal.dto.BucketPolicyConfigDto;
+import com.oyproj.portal.properties.MinioProperties;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.json.JSONUtil;
-import com.oyproj.admin.dto.BucketPolicyConfigDto;
-import com.oyproj.admin.dto.MinioUploadDto;
-import com.oyproj.admin.properties.MinioProperties;
-import com.oyproj.admin.service.MiniService;
-import com.oyproj.common.api.CommonResult;
+import com.oyproj.portal.dto.MinioUploadDto;
+import com.oyproj.portal.service.MinioService;
 import io.minio.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,9 +17,9 @@ import java.util.Date;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class MiniServiceImpl implements MiniService {
-
+public class MinioServiceImpl implements MinioService {
     private final MinioProperties minioProperties;
+
     @Override
     public MinioUploadDto upload(MultipartFile file) {
         try {
@@ -57,7 +55,7 @@ public class MiniServiceImpl implements MiniService {
             log.info("文件上传成功!");
             MinioUploadDto minioUploadDto = new MinioUploadDto();
             minioUploadDto.setName(filename);
-            minioUploadDto.setUrl(minioProperties.getEndpoint() + "/" + minioUploadDto.getName() + "/" + objectName);
+            minioUploadDto.setUrl(minioProperties.getEndpoint() + "/" + minioProperties.getBucketName() + "/" + objectName);
 
             return minioUploadDto;
 
@@ -90,7 +88,7 @@ public class MiniServiceImpl implements MiniService {
                 .Effect("Allow")
                 .Principal("*")
                 .Action("s3:GetObject")
-                .Resource("arn:aws:s3:::"+bucketName+"/*.**").build();
+                .Resource("arn:aws:s3:::"+bucketName+"/*").build();
         return BucketPolicyConfigDto.builder()
                 .Version("2012-10-17")
                 .Statement(CollUtil.toList(statement))

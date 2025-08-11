@@ -11,6 +11,7 @@ import com.oyproj.mall.mapper.UmsMemberLevelMapper;
 import com.oyproj.mall.mapper.UmsMemberMapper;
 import com.oyproj.mall.model.UmsMember;
 import com.oyproj.mall.model.UmsMemberLevel;
+import com.oyproj.portal.dto.UmsUpdateMemberInfoDto;
 import com.oyproj.portal.properties.RedisProperties;
 import com.oyproj.portal.service.UmsMemberCacheService;
 import com.oyproj.portal.service.UmsMemberService;
@@ -18,6 +19,7 @@ import com.oyproj.portal.util.StpMemberUtil;
 import io.micrometer.common.util.StringUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -217,6 +219,25 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         StpMemberUtil.logout();
     }
 
+    @Override
+    public int updateInfo(UmsUpdateMemberInfoDto newMember) {
+        //先获得该id对应的newMember
+        UmsMember currentMember = getCurrentMember();
+        if(currentMember==null) return 0;
+
+        UmsMember umsMember = new UmsMember();
+        umsMember.setId(currentMember.getId());
+        BeanUtils.copyProperties(newMember,umsMember,getNullPropertyNames(newMember));
+        int count =  memberMapper.updateById(umsMember);
+        if(count!=0){
+            //修改成功更新cache
+            memberCacheService.delMember(currentMember.getId());
+            BeanUtils.copyProperties(newMember,currentMember,getNullPropertyNames(newMember));
+            memberCacheService.setMember(currentMember);
+        }
+        return count;
+    }
+
     //对输入的验证码进行校验
     private boolean verifyAuthCode(String authCode,String telephone){
         if(StringUtils.isNotBlank(authCode)){
@@ -224,5 +245,18 @@ public class UmsMemberServiceImpl implements UmsMemberService {
             return authCode.equals(realAuthCode);
         }
         return false;
+    }
+
+    private String[] getNullPropertyNames(Object source) {
+        org.springframework.beans.BeanWrapper src = new org.springframework.beans.BeanWrapperImpl(source);
+        java.beans.PropertyDescriptor[] pds = src.getPropertyDescriptors();
+
+        java.util.Set<String> emptyNames = new java.util.HashSet<>();
+        for (java.beans.PropertyDescriptor pd : pds) {
+            Object srcValue = src.getPropertyValue(pd.getName());
+            if (srcValue == null) emptyNames.add(pd.getName());
+        }
+        String[] result = new String[emptyNames.size()];
+        return emptyNames.toArray(result);
     }
 }

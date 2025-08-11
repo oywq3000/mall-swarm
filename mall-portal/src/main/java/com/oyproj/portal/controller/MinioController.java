@@ -1,8 +1,8 @@
-package com.oyproj.admin.controller;
+package com.oyproj.portal.controller;
 
-import com.oyproj.admin.dto.MinioUploadDto;
-import com.oyproj.admin.service.MiniService;
 import com.oyproj.common.api.CommonResult;
+import com.oyproj.portal.dto.MinioUploadDto;
+import com.oyproj.portal.service.MinioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -20,9 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/minio")
 @Slf4j
 @RequiredArgsConstructor
-public class MiniController {
+public class MinioController {
 
-    private final MiniService miniService;
+    private final MinioService miniService;
 
     @Operation(summary = "文件上传")
     @PostMapping(value = "/upload")

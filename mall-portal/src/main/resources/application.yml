@@ -81,6 +81,13 @@ springdoc:
   group-configs:
     - group: 'default'
       packages-to-scan: com.oyproj.portal.controller
+
+minio:
+  endpoint: http://192.168.200.130:9090 #MinIO服务所在地址
+  bucketName: mall-portal #存储桶名称
+  accessKey: minioadmin #访问的key
+  secretKey: minioadmin #访问的秘钥
+
 sa-token:
   # token名称 (同时也是cookie名称)
   token-name: Authorization

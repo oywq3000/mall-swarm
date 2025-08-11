@@ -3,6 +3,7 @@ package com.oyproj.portal.service;
 
 import cn.dev33.satoken.stp.SaTokenInfo;
 import com.oyproj.mall.model.UmsMember;
+import com.oyproj.portal.dto.UmsUpdateMemberInfoDto;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -55,4 +56,7 @@ public interface UmsMemberService {
      * 登出功能
      */
     void logout();
+
+    @Transactional
+    int updateInfo(UmsUpdateMemberInfoDto newMember);
 }
