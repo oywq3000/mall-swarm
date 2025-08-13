@@ -8,6 +8,8 @@ import java.util.Date;
 public class SmsHomeAdvertise implements Serializable {
     private Long id;
 
+    //增加product的Id
+    private Long productId;
     private String name;
 
     @Schema(title = "轮播位置：0->PC首页轮播；1->app首页轮播")
@@ -45,6 +47,13 @@ public class SmsHomeAdvertise implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getProductId(){
+        return productId;
+    }
+    public void setProductId(Long productId){
+        this.productId = productId;
     }
 
     public String getName() {

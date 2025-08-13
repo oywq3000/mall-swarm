@@ -84,7 +84,7 @@ springdoc:
 
 minio:
   endpoint: http://192.168.200.130:9090 #MinIO服务所在地址
-  bucketName: mall #存储桶名称
+  bucketName: mall-portal #存储桶名称
   accessKey: minioadmin #访问的key
   secretKey: minioadmin #访问的秘钥
 

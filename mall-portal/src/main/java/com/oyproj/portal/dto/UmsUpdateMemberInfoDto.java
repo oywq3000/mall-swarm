@@ -18,4 +18,6 @@ public class UmsUpdateMemberInfoDto {
     private Integer gender;
     @Schema(title = "生日")
     private Date birthday;
+    @Schema(title = "头像")
+    private String icon;
 }

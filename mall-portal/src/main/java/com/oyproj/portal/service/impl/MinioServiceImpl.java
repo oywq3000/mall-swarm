@@ -9,6 +9,7 @@ import io.minio.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.text.SimpleDateFormat;
@@ -20,8 +21,15 @@ import java.util.Date;
 public class MinioServiceImpl implements MinioService {
     private final MinioProperties minioProperties;
 
+
+
     @Override
-    public MinioUploadDto upload(MultipartFile file) {
+    public MinioUploadDto upload(MultipartFile file){
+        return upload(file,null);
+    }
+
+    @Override
+    public MinioUploadDto upload(MultipartFile file, String subDirName) {
         try {
             //创建一个Minio的java客户端
             MinioClient minioClient = MinioClient.builder()
@@ -43,8 +51,13 @@ public class MinioServiceImpl implements MinioService {
             }
             String filename = file.getOriginalFilename();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+            String objectName; //判断是否要加入subDirName作为分区
+            if(StringUtils.hasText(subDirName)){
+                objectName = subDirName+"/"+ sdf.format(new Date()) + "/" + filename;
+            }else{
+                objectName = sdf.format(new Date()) + "/" + filename;
+            }
             // 设置存储对象名称
-            String objectName = sdf.format(new Date()) + "/" + filename;
             // 使用putObject上传一个文件到存储桶中
             PutObjectArgs putObjectArgs = PutObjectArgs.builder()
                     .bucket(minioProperties.getBucketName())
@@ -56,9 +69,7 @@ public class MinioServiceImpl implements MinioService {
             MinioUploadDto minioUploadDto = new MinioUploadDto();
             minioUploadDto.setName(filename);
             minioUploadDto.setUrl(minioProperties.getEndpoint() + "/" + minioProperties.getBucketName() + "/" + objectName);
-
             return minioUploadDto;
-
         }catch (Exception e){
             e.printStackTrace();
             log.info("上传发生错误: {}！", e.getMessage());
