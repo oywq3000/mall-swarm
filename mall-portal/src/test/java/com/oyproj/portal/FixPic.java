@@ -1,23 +1,15 @@
 package com.oyproj.portal;
-
-
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.oyproj.mall.mapper.*;
-import com.oyproj.mall.model.PmsBrand;
-import com.oyproj.mall.model.PmsProduct;
-import com.oyproj.mall.model.SmsHomeAdvertise;
 import com.oyproj.portal.service.MinioService;
-import net.bytebuddy.implementation.bytecode.assign.TypeCasting;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
