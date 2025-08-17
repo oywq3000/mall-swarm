@@ -1,7 +1,7 @@
 package com.oyproj.search.dao;
 
 
-import com.oyproj.search.dto.EsProduct;
+import com.mall.api.dto.search.EsProduct;
 import org.apache.ibatis.annotations.Param;
 
 

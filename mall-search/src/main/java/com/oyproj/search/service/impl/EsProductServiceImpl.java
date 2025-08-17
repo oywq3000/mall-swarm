@@ -5,9 +5,9 @@ import co.elastic.clients.elasticsearch._types.aggregations.*;
 import co.elastic.clients.elasticsearch._types.aggregations.Aggregation;
 import co.elastic.clients.elasticsearch._types.query_dsl.*;
 import co.elastic.clients.elasticsearch._types.query_dsl.QueryBuilders;
+import com.mall.api.dto.search.EsProduct;
 import com.oyproj.search.dao.EsProductDao;
-import com.oyproj.search.dto.EsProduct;
-import com.oyproj.search.dto.EsProductRelatedInfo;
+import com.mall.api.dto.search.EsProductRelatedInfo;
 import com.oyproj.search.repository.EsProductRepository;
 import com.oyproj.search.service.EsProductService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -29,13 +28,13 @@ import java.util.stream.Collectors;
 @Slf4j
 @RequiredArgsConstructor
 public class EsProductServiceImpl implements EsProductService {
-
-
     private final EsProductDao productDao;
 
     private final EsProductRepository productRepository;
 
     private final ElasticsearchTemplate elasticsearchTemplate;
+
+    private boolean isImport = false;
 
     /**
      * 从数据库中导入所有商品到ES
@@ -105,6 +104,18 @@ public class EsProductServiceImpl implements EsProductService {
     }
 
     /**
+     * 根据关键字搜索名称或者副标题，并添加搜索排序
+     *
+     * @param keyword
+     * @param pageNum
+     * @param pageSize
+     */
+    public Page<EsProduct> search(String keyword, Integer pageNum, Integer pageSize,Integer sort) {
+        return search(keyword,null,null,pageNum,pageSize,sort);
+    }
+
+
+    /**
      * 根据关键字搜索名称或者副标题复合查询
      *
      * @param keyword
@@ -116,6 +127,7 @@ public class EsProductServiceImpl implements EsProductService {
      */
     @Override
     public Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize, Integer sort) {
+        checkAndImport();
         Pageable pageable = PageRequest.of(pageNum, pageSize);
         NativeQueryBuilder nativeQueryBuilder = new NativeQueryBuilder();
         //分页
@@ -179,7 +191,10 @@ public class EsProductServiceImpl implements EsProductService {
         if(searchHits.getTotalHits()<=0){
             return new PageImpl<>(ListUtil.empty(),pageable,0);
         }
-        List<EsProduct> esProducts = searchHits.stream().map(SearchHit::getContent).toList();
+        List<EsProduct> esProducts = searchHits
+                .stream()
+                .map(SearchHit::getContent)
+                .filter(item->item!=null).toList();
         return new PageImpl<>(esProducts,pageable,searchHits.getTotalHits());
     }
 
@@ -321,5 +336,11 @@ public class EsProductServiceImpl implements EsProductService {
         }
         productRelatedInfo.setProductAttrs(attrList);
         return productRelatedInfo;
+    }
+
+    private boolean checkAndImport(){
+        if(!isImport){importAll();}
+        isImport =true;
+        return isImport;
     }
 }

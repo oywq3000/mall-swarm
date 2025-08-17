@@ -1,7 +1,7 @@
 package com.oyproj.search.service;
 
-import com.oyproj.search.dto.EsProduct;
-import com.oyproj.search.dto.EsProductRelatedInfo;
+import com.mall.api.dto.search.EsProduct;
+import com.mall.api.dto.search.EsProductRelatedInfo;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -35,6 +35,11 @@ public interface EsProductService {
      * 根据关键字搜索名称或者副标题
      */
     Page<EsProduct> search(String keyword, Integer pageNum, Integer pageSize);
+
+    /**
+     * 根据关键字和排序方法进行搜索
+     */
+     Page<EsProduct> search(String keyword, Integer pageNum, Integer pageSize,Integer sort);
 
     /**
      * 根据关键字搜索名称或者副标题复合查询

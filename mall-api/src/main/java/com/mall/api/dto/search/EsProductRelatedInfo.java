@@ -1,4 +1,4 @@
-package com.oyproj.search.dto;
+package com.mall.api.dto.search;
 
 import java.util.List;
 

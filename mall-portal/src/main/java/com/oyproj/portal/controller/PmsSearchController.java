@@ -1,5 +1,7 @@
 package com.oyproj.portal.controller;
 
+import com.mall.api.client.SearchClient;
+import com.mall.api.dto.search.EsProduct;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
 import com.oyproj.common.api.IPageInfo;
@@ -25,17 +27,21 @@ import java.util.List;
 public class PmsSearchController {
 
     private final PmsSearchService searchService;
+    private final SearchClient searchClient;
 
     @Operation(description = "搜索商品")
     @Parameter(name = "sort",description = "排序字段:0->按相关度；1->按新品；2->按销量；3->价格从低到高；4->价格从高到低",
     in = ParameterIn.QUERY,schema = @Schema(type = "integer",defaultValue = "0",allowableValues = {"0","1","2","3","4"}))
     @GetMapping("/search")
-    CommonResult<CommonPage<PmsProduct>> search(@RequestParam(required = false) String keyword,
-                                                @RequestParam(required = false,defaultValue = "0") Integer pageNum,
+    CommonResult<CommonPage<EsProduct>> search(@RequestParam(required = false) String keyword,
+                                                @RequestParam(required = false,defaultValue = "1") Integer pageNum,
                                                 @RequestParam(required = false, defaultValue = "5") Integer pageSize,
                                                 @RequestParam(required = false, defaultValue = "0") Integer sort){
-        IPageInfo<PmsProduct> productList = searchService.search(keyword,pageNum,pageSize,sort);
-        return CommonResult.success(CommonPage.restPage(productList));
+        //IPageInfo<PmsProduct> productList = searchService.search(keyword,pageNum,pageSize,sort);
+        //对应后端而言前端page从1开始，而后端page从0开始。
+        pageNum--;
+        CommonResult<CommonPage<EsProduct>> search = searchClient.search(keyword, pageNum, pageSize, sort);
+        return search;
     }
 
     @Operation(description = "删除搜索历史记录")

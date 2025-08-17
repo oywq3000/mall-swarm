@@ -1,9 +1,9 @@
 package com.oyproj.search.controller;
 
+import com.mall.api.dto.search.EsProduct;
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
-import com.oyproj.search.dto.EsProduct;
-import com.oyproj.search.dto.EsProductRelatedInfo;
+import com.mall.api.dto.search.EsProductRelatedInfo;
 import com.oyproj.search.service.EsProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -71,9 +71,21 @@ public class EsProductController {
         return CommonResult.success(CommonPage.restPage(esProductPage));
     }
 
+    @Operation(summary = "综合搜索,排序")
+    @GetMapping(value = "/search")
+    public CommonResult<CommonPage<EsProduct>> search(@RequestParam(required = false) String keyword,
+                                                      @RequestParam(required = false, defaultValue = "1") Integer pageNum,
+                                                      @RequestParam(required = false, defaultValue = "5") Integer pageSize,
+                                                      @RequestParam(required = false, defaultValue = "0") Integer sort) {
+        //后端pageNum从0开始数
+        pageNum--;
+        Page<EsProduct> esProductPage = esProductService.search(keyword, pageNum, pageSize,sort);
+        return CommonResult.success(CommonPage.restPage(esProductPage));
+    }
+
     @Operation(summary = "综合搜索、筛选、排序")
     @Parameter(name = "sort", description = "排序字段:0->按相关度；1->按新品；2->按销量；3->价格从低到高；4->价格从高到低", in = ParameterIn.QUERY, schema = @Schema(type = "integer",defaultValue = "0",allowableValues = {"0","1","2","3","4"}))
-    @GetMapping(value = "/search")
+    @GetMapping(value = "/search/local")
     public CommonResult<CommonPage<EsProduct>> search(@RequestParam(required = false) String keyword,
                                                       @RequestParam(required = false) Long brandId,
                                                       @RequestParam(required = false) Long productCategoryId,

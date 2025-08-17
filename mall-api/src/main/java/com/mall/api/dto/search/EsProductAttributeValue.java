@@ -1,4 +1,4 @@
-package com.oyproj.search.dto;
+package com.mall.api.dto.search;
 
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;

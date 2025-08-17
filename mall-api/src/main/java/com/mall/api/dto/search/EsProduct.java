@@ -1,4 +1,4 @@
-package com.oyproj.search.dto;
+package com.mall.api.dto.search;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
