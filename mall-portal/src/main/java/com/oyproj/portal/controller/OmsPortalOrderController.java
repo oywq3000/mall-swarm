@@ -2,9 +2,7 @@ package com.oyproj.portal.controller;
 
 import com.oyproj.common.api.CommonPage;
 import com.oyproj.common.api.CommonResult;
-import com.oyproj.portal.dto.ConfirmOrderResult;
-import com.oyproj.portal.dto.OmsOrderDetail;
-import com.oyproj.portal.dto.OrderParam;
+import com.oyproj.portal.dto.*;
 import com.oyproj.portal.service.OmsPortalOrderService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -24,17 +22,32 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class OmsPortalOrderController {
     private final OmsPortalOrderService portalOrderService;
-    @Operation(summary = "根据购物车信息生成确认单信息")
+    @Operation(summary = "根据购物车信息生成确认订单信息")
     @PostMapping(value = "/generateConfirmOrder")
     public CommonResult<ConfirmOrderResult> generateConfirmOrder(@RequestBody List<Long> cartIds) {
         ConfirmOrderResult confirmOrderResult = portalOrderService.generateConfirmOrder(cartIds);
         return CommonResult.success(confirmOrderResult);
     }
 
+    @Operation(summary = "根据当个商品id生成确定订单信息")
+    @PostMapping("/generateConfirmOrderByProduct")
+    public CommonResult<ConfirmOrderResult> generatePmsConfirmOrder(@RequestBody ProductDto productDto){
+        ConfirmOrderResult confirmOrderResult = portalOrderService.generatePmsConfirmOrder(productDto);
+        return CommonResult.success(confirmOrderResult);
+    }
+
+
     @Operation(summary = "根据购物车信息生成订单")
     @PostMapping(value = "/generateOrder")
     public CommonResult generateOrder(@RequestBody OrderParam orderParam) {
         Map<String, Object> result = portalOrderService.generateOrder(orderParam);
+        return CommonResult.success(result, "下单成功");
+    }
+
+    @Operation(summary = "根据单个产品信息生成订单")
+    @PostMapping(value = "/generateOrderByProduct")
+    public CommonResult generateOrderByProduct(@RequestBody OrderByProductParam orderByProductParam) {
+        Map<String, Object> result = portalOrderService.generateOrder(orderByProductParam);
         return CommonResult.success(result, "下单成功");
     }
 

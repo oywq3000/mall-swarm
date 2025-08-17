@@ -1,9 +1,7 @@
 package com.oyproj.portal.service;
 
 import com.oyproj.common.api.CommonPage;
-import com.oyproj.portal.dto.ConfirmOrderResult;
-import com.oyproj.portal.dto.OmsOrderDetail;
-import com.oyproj.portal.dto.OrderParam;
+import com.oyproj.portal.dto.*;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -21,6 +19,12 @@ public interface OmsPortalOrderService {
     @Transactional
     Map<String, Object> generateOrder(OrderParam orderParam);
 
+    /**
+     * 根据提交信息（单个产品）生成订单
+     * @param orderByProductParam
+     * @return
+     */
+    public Map<String, Object> generateOrder(OrderByProductParam orderByProductParam);
     /**
      * 支付成功后的回调
      */
@@ -69,4 +73,6 @@ public interface OmsPortalOrderService {
      */
     @Transactional
     void paySuccessByOrderSn(String orderSn, Integer payType);
+
+    ConfirmOrderResult generatePmsConfirmOrder(ProductDto productId);
 }

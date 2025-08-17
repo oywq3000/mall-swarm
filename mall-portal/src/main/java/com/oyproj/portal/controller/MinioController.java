@@ -36,7 +36,6 @@ public class MinioController {
     @Operation(summary = "文件删除")
     @PostMapping(value = "/delete")
     public CommonResult delete(@RequestParam("objectName") String objectName) {
-
         boolean isUpdated =  miniService.delete(objectName);
         if(isUpdated) return CommonResult.success(null);
         return CommonResult.failed();

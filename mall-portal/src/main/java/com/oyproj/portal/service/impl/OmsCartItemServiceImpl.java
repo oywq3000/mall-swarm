@@ -36,7 +36,6 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
      */
     @Override
     public int add(OmsCartItem cartItem) {
-
         int count;
         UmsMember currentMember = memberService.getCurrentMember();
         cartItem.setMemberId(currentMember.getId());
@@ -80,6 +79,19 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
         if(CollUtil.isNotEmpty(cartIds)){
             cartItemList = cartItemList.stream().filter(item->cartIds.contains(item.getId())).toList();
         }
+        List<CartPromotionItem> cartPromotionItemList = new ArrayList<>();
+        if(CollectionUtils.isNotEmpty(cartItemList)){
+            cartPromotionItemList = promotionService.calcCartPromotion(cartItemList);
+        }
+        return cartPromotionItemList;
+    }
+
+    @Override
+    public List<CartPromotionItem> listPromotion(OmsCartItem cartItem) {
+
+        List<OmsCartItem> cartItemList = List.of(cartItem);
+        //如果指定了购物车id，则只返回指定购物车中的商品
+
         List<CartPromotionItem> cartPromotionItemList = new ArrayList<>();
         if(CollectionUtils.isNotEmpty(cartItemList)){
             cartPromotionItemList = promotionService.calcCartPromotion(cartItemList);
